@@ -7,22 +7,34 @@ using System.Linq;
 /// </summary>
 public static class CommonUtils
 {
+    /// <summary>
+    /// Tests whether this object is null.
+    /// </summary>
     public static bool IsNull(this object obj)
     {
         return obj == null;
     }
 
+    /// <summary>
+    /// Tests whether this object is not null.
+    /// </summary>
     public static bool IsNotNull(this object obj)
     {
         return obj != null;
     }
 
+    /// <summary>
+    /// Clones this object the same way as Clone(), but returns result as type T instead of object.
+    /// </summary>
     public static T CloneT<T>(this T t)
         where T : ICloneable
     {
         return (T)t.Clone();
     }
 
+    /// <summary>
+    /// Returns the most inner exception.
+    /// </summary>
     public static Exception GetMostInnerException(this Exception exception)
     {
         while (exception.InnerException.IsNotNull())
@@ -33,6 +45,9 @@ public static class CommonUtils
         return exception;
     }
 
+    /// <summary>
+    /// Returns all inner exceptions as IEnumerable starting from the most inner one.
+    /// </summary>
     public static IEnumerable<Exception> GetAllExceptions(this Exception exception)
     {
         if (exception == null) yield break;

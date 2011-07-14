@@ -55,11 +55,17 @@ public static class ComparableUtils
     #endregion
 
     #region InRange
+    /// <summary>
+    /// Tests whether value &gt;= min and value &lt;= max. The default comparer is used.
+    /// </summary>
     public static bool InRange<T>(T value, T min, T max)
     {
         return InRange(value, min, max, Comparer<T>.Default);
     }
 
+    /// <summary>
+    /// Tests whether value &gt;= min and value &lt;= max. The specified comparer is used.
+    /// </summary>
     public static bool InRange<T>(T value, T min, T max, IComparer<T> comparer)
     {
         if (min.IsGreater(max, comparer)) throw new ArgumentException("Min is greater than max.");
@@ -70,8 +76,8 @@ public static class ComparableUtils
 
     #region Clamp
     /// <summary>
-    /// If value &lt; min returns min.
-    /// If value is between min and max returns value.
+    /// If value &lt; min returns min.<para/>
+    /// If value is between min and max returns value.<para/>
     /// If value &gt; max returns max.
     /// </summary>
     public static T Clamp<T>(T value, T min, T max)
@@ -80,8 +86,8 @@ public static class ComparableUtils
     }
 
     /// <summary>
-    /// If value &lt; min returns min.
-    /// If value is between min and max returns value.
+    /// If value &lt; min returns min.<para/>
+    /// If value is between min and max returns value.<para/>
     /// If value &gt; max returns max.
     /// </summary>
     public static T Clamp<T>(T value, T min, T max, IComparer<T> comparer)

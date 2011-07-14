@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -224,9 +223,9 @@ public static class CollectionUtils
     }
 
     /// <summary>
-    /// Concats all enumerable elements' string representations (possibly separating them with separator string) and return the resulting string.
+    /// Concats all enumerable elements' string representations (possibly separating them with separator string and adding prefix and suffix to each one) and return the resulting string.
     /// </summary>
-    public static string Aggregate<T>(this IEnumerable<T> enumerable, string separator = "")
+    public static string Aggregate<T>(this IEnumerable<T> enumerable, string separator = "", string prefix = "", string suffix = "")
     {
         if (enumerable == null) throw new ArgumentNullException("enumerable");
         if (separator == null) throw new ArgumentNullException("separator");

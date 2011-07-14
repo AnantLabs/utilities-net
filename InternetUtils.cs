@@ -8,7 +8,7 @@ using System.Net;
 public static class InternetUtils
 {
     /// <summary>
-    /// Fetches content from the url as string.
+    /// Fetches content from the url as a string.
     /// </summary>
     public static string Fetch(Uri url)
     {
@@ -24,7 +24,7 @@ public static class InternetUtils
     }
 
     /// <summary>
-    /// Fetches content from the url as string.
+    /// Fetches content from the url as a string.
     /// </summary>
     public static string Fetch(string url)
     {

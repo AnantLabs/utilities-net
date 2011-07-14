@@ -69,8 +69,8 @@ public static class DateTimeUtils
     public static long ToUnixTime(this DateTime dateTime, bool withMilliseconds = false)
     {
         return withMilliseconds ?
-                                    (long)(dateTime - UnixStartDate).TotalMilliseconds :
-                                                                                           (long)(dateTime - UnixStartDate).TotalSeconds;
+            (long)(dateTime - UnixStartDate).TotalMilliseconds :
+            (long)(dateTime - UnixStartDate).TotalSeconds;
     }
 
     /// <summary>
@@ -82,8 +82,8 @@ public static class DateTimeUtils
     public static DateTime FromUnixTime(long unixTime, bool withMilliseconds = false)
     {
         return UnixStartDate +
-               (withMilliseconds ?
-                                     TimeSpan.FromMilliseconds(unixTime) :
-                                                                             TimeSpan.FromSeconds(unixTime));
+            (withMilliseconds ?
+            TimeSpan.FromMilliseconds(unixTime) :
+            TimeSpan.FromSeconds(unixTime));
     }
 }

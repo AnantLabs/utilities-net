@@ -7,14 +7,7 @@ using System.Text.RegularExpressions;
 /// </summary>
 public static class StringUtils
 {
-    /// <summary>
-    /// Precompiled regex to use by FormatEx method.
-    /// </summary>
     private static readonly Regex CurlyBracesRegex = new Regex(@"(\{+)([^\}]+)(\}+)", RegexOptions.Compiled);
-
-    /// <summary>
-    /// Precompiled Regex used by NormalizeSpaces method.
-    /// </summary>
     private static readonly Regex ExtraSpacesRegex = new Regex(@"[ ]{2,}", RegexOptions.Compiled);
 
     /// <summary>
@@ -48,7 +41,7 @@ public static class StringUtils
             format,
             match =>
             {
-                // count of open and close brackets
+                // numbers of open and close brackets
                 int openCount = match.Groups[1].Value.Length;
                 int closeCount = match.Groups[3].Value.Length;
 
@@ -62,7 +55,7 @@ public static class StringUtils
                 string openBraces = new string('{', openCount / 2);
                 string closeBraces = new string('}', closeCount / 2);
 
-                // if all braces are escaped, so the output string between them will be the same as input
+                // if all braces are escaped, the output string between them will be the same as input
                 if (openCount % 2 == 0)
                 {
                     return openBraces + match.Groups[2].Value + closeBraces;
@@ -74,12 +67,12 @@ public static class StringUtils
                 // field/property name of the object
                 string fieldName = formatItem.
                     TakeWhile(c => c != ':' && c != ',').
-                    Aggregate(string.Empty, (s, c) => s + c);
+                    Aggregate();
 
                 // format string which will be specified in string.Format()
                 string formatString = formatItem.
                     SkipWhile(c => c != ':' && c != ',').
-                    Aggregate(string.Empty, (s, c) => s + c);
+                    Aggregate();
 
                 // now get the value of object's field/property fieldName
                 var prop = type.GetProperty(fieldName);
@@ -104,7 +97,7 @@ public static class StringUtils
         return s.
             Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).
             Select(l => l.Trim()).
-            Aggregate();
+            Aggregate("\n");
     }
 
     /// <summary>

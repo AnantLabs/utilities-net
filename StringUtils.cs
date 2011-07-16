@@ -23,6 +23,9 @@ public static class StringUtils
     /// </summary>
     public static string FormatWith(this string format, params object[] args)
     {
+        if (format == null) throw new ArgumentNullException("format");
+        if (args == null) throw new ArgumentNullException("args");
+
         return string.Format(format, args);
     }
 
@@ -105,7 +108,9 @@ public static class StringUtils
     /// </summary>
     public static bool ContainsCi(this string s, string value)
     {
-        if(value == null) throw new ArgumentNullException("value");
+        if (s == null) throw new ArgumentNullException("s");
+        if (value == null) throw new ArgumentNullException("value");
+
         return s.ToLower().Contains(value.ToLower());
     }
 
@@ -114,6 +119,9 @@ public static class StringUtils
     /// </summary>
     public static string GetBefore(this string s, string x)
     {
+        if (s == null) throw new ArgumentNullException("s");
+        if (x == null) throw new ArgumentNullException("x");
+
         var index = s.IndexOf(x);
         if (index == -1) throw new InvalidOperationException("This string doesn't contain specified x string.");
 
@@ -125,6 +133,10 @@ public static class StringUtils
     /// </summary>
     public static string GetBetween(this string s, string left, string right)
     {
+        if (s == null) throw new ArgumentNullException("s");
+        if (left == null) throw new ArgumentNullException("left");
+        if (right == null) throw new ArgumentNullException("right");
+
         int leftIndex = s.IndexOf(left);
         int startIndex = leftIndex + left.Length;
         if (leftIndex == -1)
@@ -143,6 +155,9 @@ public static class StringUtils
     /// </summary>
     public static string GetAfter(this string s, string x)
     {
+        if (s == null) throw new ArgumentNullException("s");
+        if (x == null) throw new ArgumentNullException("x");
+
         var index = s.IndexOf(x);
         if (index == -1) throw new InvalidOperationException("This string doesn't contain specified x string.");
 
@@ -155,6 +170,7 @@ public static class StringUtils
     /// </summary>
     public static string NormalizeSpaces(this string s)
     {
+        if (s == null) throw new ArgumentNullException("s");
         return ExtraSpacesRegex.Replace(s, @" ");
     }
 }

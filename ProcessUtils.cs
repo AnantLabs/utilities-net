@@ -14,7 +14,7 @@ public static class ProcessUtils
     /// </summary>
     public static int RunProcess(string fileName, params string[] arguments)
     {
-        using (var process = Process.Start(fileName, arguments.Aggregate(" ", "\"", "\"")))
+        using (var process = Process.Start(fileName, arguments.Aggregate(" ", "\"{0}\"")))
         {
             process.WaitForExit();
             return process.ExitCode;

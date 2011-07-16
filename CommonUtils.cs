@@ -28,6 +28,7 @@ public static class CommonUtils
     /// </summary>
     public static bool IsOneOf<T>(this T obj, params T[] values)
     {
+        if (values.Empty()) return false;
         return values.Contains(obj);
     }
 

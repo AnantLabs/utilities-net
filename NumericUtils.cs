@@ -4,7 +4,7 @@ using System.Linq;
 /// <summary>
 /// Common numeric utility methods.
 /// </summary>
-public static class NumericUtils
+public static class MathEx
 {
     #region Lerp (linear interpolation)
     /// <summary>
@@ -74,12 +74,11 @@ public static class NumericUtils
     /// </summary>
     public static int GCD(int a, int b)
     {
-        while (a != b)
-        {
-            if (a > b) a %= b;
-            else b %= a;
-        }
+        if (a == 0 && b == 0) throw new InvalidOperationException("GCD isn't defined for two zeroes.");
+        if (a == 0 || b == 0) return Math.Abs(a + b); // gcd of 0 and another number is the absolute value of this number
+        if (a < 0 || b < 0) return GCD(Math.Abs(a), Math.Abs(b)); // gcd(a, b) == gcd(|a|,|b|)
 
+        while (b != 0) b = a % (a = b);
         return a;
     }
 
@@ -88,12 +87,11 @@ public static class NumericUtils
     /// </summary>
     public static long GCD(long a, long b)
     {
-        while (a != b)
-        {
-            if (a > b) a %= b;
-            else b %= a;
-        }
+        if (a == 0 && b == 0) throw new InvalidOperationException("GCD isn't defined for two zeroes.");
+        if (a == 0 || b == 0) return Math.Abs(a + b); // gcd of 0 and another number is the absolute value of this number
+        if (a < 0 || b < 0) return GCD(Math.Abs(a), Math.Abs(b)); // gcd(a, b) == gcd(|a|,|b|)
 
+        while (b != 0) b = a % (a = b);
         return a;
     }
 
@@ -120,7 +118,7 @@ public static class NumericUtils
     /// </summary>
     public static int LCM(int a, int b)
     {
-        return a / GCD(a, b) * b;
+        return Math.Abs(a / GCD(a, b) * b);
     }
 
     /// <summary>
@@ -128,7 +126,7 @@ public static class NumericUtils
     /// </summary>
     public static long LCM(long a, long b)
     {
-        return a / GCD(a, b) * b;
+        return Math.Abs(a / GCD(a, b) * b);
     }
 
     /// <summary>

@@ -53,6 +53,7 @@
     <Compile Include="CommonUtils.cs" />
     <Compile Include="CompareUtils.cs" />
     <Compile Include="DateTimeUtils.cs" />
+    <Compile Include="EnumerableUtils.cs" />
     <Compile Include="ImageUtils.cs" />
     <Compile Include="InternetUtils.cs" />
     <Compile Include="NumericUtils.cs" />

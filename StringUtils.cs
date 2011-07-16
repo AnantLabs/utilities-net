@@ -21,7 +21,7 @@ public static class StringUtils
     /// <summary>
     /// Formats args according to format. It's the same as string.Format().
     /// </summary>
-    public static string Format(this string format, params object[] args)
+    public static string FormatWith(this string format, params object[] args)
     {
         return string.Format(format, args);
     }
@@ -29,7 +29,7 @@ public static class StringUtils
     /// <summary>
     /// Formats arg according to format. It's like string.Format, but uses named parameters.
     /// </summary>
-    public static string FormatEx(this string format, object arg)
+    public static string FormatNamed(this string format, object arg)
     {
         if (format == null) throw new ArgumentNullException("format");
         if (arg == null) throw new ArgumentNullException("arg");
@@ -103,9 +103,10 @@ public static class StringUtils
     /// <summary>
     /// String.Contains() analog, but case insensitive.
     /// </summary>
-    public static bool ContainsCi(this string s, string t)
+    public static bool ContainsCi(this string s, string value)
     {
-        return s.ToLower().Contains(t.ToLower());
+        if(value == null) throw new ArgumentNullException("value");
+        return s.ToLower().Contains(value.ToLower());
     }
 
     /// <summary>

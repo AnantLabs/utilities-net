@@ -24,6 +24,14 @@ public static class CommonUtils
     }
 
     /// <summary>
+    /// Checks whether this object is one of the specified values.
+    /// </summary>
+    public static bool IsOneOf<T>(this T obj, params T[] values)
+    {
+        return values.Contains(obj);
+    }
+
+    /// <summary>
     /// Clones this object the same way as Clone(), but returns result as type T instead of object.
     /// </summary>
     public static T CloneT<T>(this T t)

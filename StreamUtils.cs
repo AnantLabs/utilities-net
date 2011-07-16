@@ -54,7 +54,7 @@ public static class StreamUtils
     /// </summary>
     public static IEnumerable<string> EnumerateLines(this TextReader reader)
     {
-        string line = null;
+        string line;
         while ((line = reader.ReadLine()) != null)
         {
             yield return line;

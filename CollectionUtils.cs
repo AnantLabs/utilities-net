@@ -66,6 +66,20 @@ public static class CollectionUtils
         return source.SkipWhile((t, i) => !predicate(t, i));
     }
 
+    public static IEnumerable<TSource> SkipLast<TSource>(this IEnumerable<TSource> source, int count = 1)
+    {
+        int sourceCount = source.Count();
+
+        using (var enumerator = source.GetEnumerator())
+        {
+            for (int i = 0; i < sourceCount - count; i++)
+            {
+                yield return enumerator.Current;
+                enumerator.MoveNext();
+            }
+        }
+    }
+
     /// <summary>
     /// Returns elements from a sequence until a specified condition is true.
     /// </summary>
@@ -225,7 +239,7 @@ public static class CollectionUtils
     /// <summary>
     /// Concats all enumerable elements' string representations (possibly separating them with separator string and adding prefix and suffix to each one) and return the resulting string.
     /// </summary>
-    public static string Aggregate<T>(this IEnumerable<T> enumerable, string separator = "", string prefix = "", string suffix = "")
+    public static string Aggregate<TSource>(this IEnumerable<TSource> enumerable, string separator = "", string prefix = "", string suffix = "")
     {
         if (enumerable == null) throw new ArgumentNullException("enumerable");
         if (separator == null) throw new ArgumentNullException("separator");
@@ -235,7 +249,26 @@ public static class CollectionUtils
         string result = enumerable.
             Aggregate(
                 new StringBuilder(),
-                (sb, s) => sb.Append(s).Append(separator),
+                (sb, el) => sb.Append(prefix).Append(el).Append(suffix).Append(separator),
+                sb => sb.ToString());
+
+        return result.Substring(0, result.Length - separator.Length);
+    }
+
+    /// <summary>
+    /// Concats all enumerable elements' string representations (possibly separating them with separator string and adding prefix and suffix to each one) and return the resulting string.
+    /// </summary>
+    public static string Aggregate<TSource, TDest>(this IEnumerable<TSource> enumerable, Func<TSource, TDest> func, string separator = "", string prefix = "", string suffix = "")
+    {
+        if (enumerable == null) throw new ArgumentNullException("enumerable");
+        if (separator == null) throw new ArgumentNullException("separator");
+
+        if (enumerable.Empty()) return string.Empty;
+
+        string result = enumerable.
+            Aggregate(
+                new StringBuilder(),
+                (sb, el) => sb.Append(prefix).Append(func(el)).Append(suffix).Append(separator),
                 sb => sb.ToString());
 
         return result.Substring(0, result.Length - separator.Length);
@@ -244,7 +277,7 @@ public static class CollectionUtils
     /// <summary>
     /// Inverts the dictionary (swaps keys and values). Identical values are not keeped!
     /// </summary>
-    public static IDictionary<TValue, TKey> Invert<TKey, TValue>(this IDictionary<TKey, TValue> dictionary)
+    public static Dictionary<TValue, TKey> Invert<TKey, TValue>(this IDictionary<TKey, TValue> dictionary)
     {
         return dictionary.ToDictionary(i => i.Value, i => i.Key);
     }

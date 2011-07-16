@@ -4,7 +4,7 @@ using System.Collections.Generic;
 /// <summary>
 /// Common comparable utility methods.
 /// </summary>
-public static class ComparableUtils
+public static class CompareUtils
 {
     #region IsLess
     public static bool IsLess<T>(this T x, T y)
@@ -58,7 +58,7 @@ public static class ComparableUtils
     /// <summary>
     /// Tests whether value &gt;= min and value &lt;= max. The default comparer is used.
     /// </summary>
-    public static bool InRange<T>(T value, T min, T max)
+    public static bool InRange<T>(this T value, T min, T max)
     {
         return InRange(value, min, max, Comparer<T>.Default);
     }
@@ -66,7 +66,7 @@ public static class ComparableUtils
     /// <summary>
     /// Tests whether value &gt;= min and value &lt;= max. The specified comparer is used.
     /// </summary>
-    public static bool InRange<T>(T value, T min, T max, IComparer<T> comparer)
+    public static bool InRange<T>(this T value, T min, T max, IComparer<T> comparer)
     {
         if (min.IsGreater(max, comparer)) throw new ArgumentException("Min is greater than max.");
 

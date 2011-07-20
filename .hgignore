@@ -1,5 +1,6 @@
 syntax: glob
-bin
 obj
+bin/Debug
 syntax: regexp
 _ReSharper
+ReSharper

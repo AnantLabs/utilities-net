@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-public static class EnumerableUtils
+/// <summary>
+/// Extension methods for generic IEnumerable.
+/// </summary>
+public static class GenericEnumerableExtensions
 {
     /// <summary>
     /// Tests whether the source is empty or null.
@@ -114,22 +116,6 @@ public static class EnumerableUtils
     }
 
     /// <summary>
-    /// Makes IEnumerable of single element.
-    /// </summary>
-    public static IEnumerable<TSource> MakeEnumerable<TSource>(TSource item)
-    {
-        yield return item;
-    }
-
-    /// <summary>
-    /// Makes IEnumerable of specified elements.
-    /// </summary>
-    public static IEnumerable<TSource> MakeEnumerable<TSource>(params TSource[] items)
-    {
-        return items;
-    }
-
-    /// <summary>
     /// Appends item to the end of the IEnumerable.
     /// </summary>
     public static IEnumerable<TSource> Concat<TSource>(this IEnumerable<TSource> source, TSource item)
@@ -150,6 +136,7 @@ public static class EnumerableUtils
     public static IEnumerable<TSource> Concat<TSource>(this IEnumerable<TSource> source, params TSource[] items)
     {
         if (source == null) throw new ArgumentNullException("source");
+        if (items == null) throw new ArgumentNullException("items");
 
         return source.Concat(items.AsEnumerable());
     }

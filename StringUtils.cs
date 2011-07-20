@@ -11,11 +11,27 @@ public static class StringUtils
     private static readonly Regex ExtraSpacesRegex = new Regex(@"[ ]{2,}", RegexOptions.Compiled);
 
     /// <summary>
+    /// Checkes whether this string is empty.
+    /// </summary>
+    public static bool IsEmpty(this string s)
+    {
+        return s == string.Empty;
+    }
+
+    /// <summary>
     /// Checkes whether this string is null or an empty string.
     /// </summary>
     public static bool IsNullOrEmpty(this string s)
     {
         return string.IsNullOrEmpty(s);
+    }
+
+    /// <summary>
+    /// Checkes whether this string is null, empty or consists only of white-space characters.
+    /// </summary>
+    public static bool IsNullOrWhiteSpace(this string s)
+    {
+        return string.IsNullOrWhiteSpace(s);
     }
 
     /// <summary>

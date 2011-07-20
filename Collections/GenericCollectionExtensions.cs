@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 /// <summary>
-/// Common enumerable and collection utility methods.
+/// Extension methods for generic ICollection and classes derived from it.
 /// </summary>
-public static class CollectionUtils
+public static class GenericCollectionExtensions
 {
     /// <summary>
     /// Adds the IEnumerable source elements to this collection.
@@ -15,7 +14,6 @@ public static class CollectionUtils
     {
         if (collection == null) throw new ArgumentNullException("collection");
         if (source == null) throw new ArgumentNullException("source");
-        if (collection.IsReadOnly) throw new InvalidOperationException("Can't add to readonly collection.");
 
         foreach (var elem in source)
         {
@@ -29,7 +27,7 @@ public static class CollectionUtils
     public static void AddRange<TSource>(this ICollection<TSource> collection, params TSource[] items)
     {
         if (collection == null) throw new ArgumentNullException("collection");
-        if (collection.IsReadOnly) throw new InvalidOperationException("Can't add to readonly collection.");
+        if (items == null) throw new ArgumentNullException("items");
 
         foreach (var item in items)
         {
@@ -40,7 +38,7 @@ public static class CollectionUtils
     /// <summary>
     /// Tests whether the specified index is valid for the list.
     /// </summary>
-    public static bool ValidIndex<TSource>(this IList<TSource> list, int index)
+    public static bool IsValidIndex<TSource>(this IList<TSource> list, int index)
     {
         if (list == null) return false;
         return index >= 0 && index < list.Count;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 /// <summary>
-/// Common utility methods.
+/// Extension methods that cannot be easily divided into different categories.
 /// </summary>
 public static class CommonUtils
 {
@@ -28,7 +28,6 @@ public static class CommonUtils
     /// </summary>
     public static bool IsOneOf<T>(this T obj, params T[] values)
     {
-        if (values.Empty()) return false;
         return values.Contains(obj);
     }
 
@@ -42,31 +41,13 @@ public static class CommonUtils
     }
 
     /// <summary>
-    /// Returns the most inner exception.
+    /// If the specified function doesn't throw anything - returns its result. <para/>
+    /// If the specified function throws only NullReferenceException - returns default value of type T. <para/>
+    /// If the specified function throws any other exception - nothing is done with the exception.
     /// </summary>
-    public static Exception GetMostInnerException(this Exception exception)
+    public static T TryNullReference<T>(this Func<T> function)
     {
-        while (exception.InnerException.IsNotNull())
-        {
-            exception = exception.InnerException;
-        }
-
-        return exception;
-    }
-
-    /// <summary>
-    /// Returns all inner exceptions as IEnumerable starting from the most inner one.
-    /// </summary>
-    public static IEnumerable<Exception> GetAllExceptions(this Exception exception)
-    {
-        if (exception == null) yield break;
-
-        foreach (var ex in exception.InnerException.GetAllExceptions())
-        {
-            yield return ex;
-        }
-
-        yield return exception;
+        return TryNullReference<T>(function, default(T));
     }
 
     /// <summary>

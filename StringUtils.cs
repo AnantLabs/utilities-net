@@ -35,7 +35,7 @@ public static class StringUtils
     }
 
     /// <summary>
-    /// Formats args according to format. It's the same as string.Format().
+    /// Formats <paramref name="args"/> according to <paramref name="format"/>. It's the same as string.Format().
     /// </summary>
     public static string FormatWith(this string format, params object[] args)
     {
@@ -46,9 +46,9 @@ public static class StringUtils
     }
 
     /// <summary>
-    /// Formats arg according to format. It's like string.Format, but uses named parameters.
+    /// Formats <paramref name="arg"/> according to <paramref name="format"/>. It's like string.Format, but uses named parameters.
     /// </summary>
-    public static string FormatNamed(this string format, object arg)
+    public static string FormatNamed<T>(this string format, T arg)
     {
         if (format == null) throw new ArgumentNullException("format");
         if (arg == null) throw new ArgumentNullException("arg");
@@ -131,7 +131,7 @@ public static class StringUtils
     }
 
     /// <summary>
-    /// Gets substring before the first occurrence of x string.
+    /// Gets substring before the first occurrence of <paramref name="x"/>.
     /// </summary>
     public static string GetBefore(this string s, string x)
     {
@@ -145,7 +145,7 @@ public static class StringUtils
     }
 
     /// <summary>
-    /// Gets the string between the first occurrence of left and the first occurrence of right after left's one.
+    /// Gets the string between the first occurrence of <paramref name="left"/> and the first occurrence of <paramref name="right"/> after left's one.
     /// </summary>
     public static string GetBetween(this string s, string left, string right)
     {
@@ -167,7 +167,7 @@ public static class StringUtils
     }
 
     /// <summary>
-    /// Gets substring after the first occurrence of x string.
+    /// Gets substring after the first occurrence of <paramref name="x"/>.
     /// </summary>
     public static string GetAfter(this string s, string x)
     {
@@ -188,5 +188,35 @@ public static class StringUtils
     {
         if (s == null) throw new ArgumentNullException("s");
         return ExtraSpacesRegex.Replace(s, @" ");
+    }
+
+    /// <summary>
+    /// Returns number of <paramref name="value"/>'s occurences in this string.
+    /// <para/>TODO: I think this is wrong
+    /// </summary>
+    public static int Count(this string s, string value)
+    {
+        if (s == null) throw new ArgumentNullException("s");
+        if (value == null) throw new ArgumentNullException("value");
+        if (value.IsEmpty()) throw new ArgumentException("Can't count empty string occurences", "value");
+
+        int cnt = 0;
+        int ind = 0;
+        while ((ind = s.IndexOf(value, ind)) != -1)
+        {
+            cnt++;
+        }
+        return cnt;
+    }
+
+    /// <summary>
+    /// Returns this string with character at position <paramref name="index"/> replaced with <paramref name="ch"/>.
+    /// </summary>
+    public static string Replace(this string s, int index, char ch)
+    {
+        if (s == null) throw new ArgumentNullException("s");
+        if (!index.InRange(0, s.Length)) throw new ArgumentOutOfRangeException("index");
+
+        return s.Substring(0, index) + ch + s.Substring(index + 1);
     }
 }

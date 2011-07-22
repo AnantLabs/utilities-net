@@ -56,7 +56,7 @@ public static class CompareUtils
 
     #region InRange
     /// <summary>
-    /// Tests whether value &gt;= min and value &lt;= max. The default comparer is used.
+    /// Tests whether value &gt;= min and value &lt; max. The default comparer is used.
     /// </summary>
     public static bool InRange<T>(this T value, T min, T max)
     {
@@ -64,13 +64,13 @@ public static class CompareUtils
     }
 
     /// <summary>
-    /// Tests whether value &gt;= min and value &lt;= max. The specified comparer is used.
+    /// Tests whether value &gt;= min and value &lt; max. The specified comparer is used.
     /// </summary>
     public static bool InRange<T>(this T value, T min, T max, IComparer<T> comparer)
     {
         if (min.IsGreater(max, comparer)) throw new ArgumentException("Min is greater than max.");
 
-        return value.IsGreaterOrEqual(min, comparer) && value.IsLessOrEqual(max, comparer);
+        return value.IsGreaterOrEqual(min, comparer) && value.IsLess(max, comparer);
     }
     #endregion
 

@@ -68,15 +68,15 @@ public static class MathEx
     }
     #endregion
 
-    #region GCD
+    #region Gcd
     /// <summary>
     /// Returns greatest common divisor of a and b.
     /// </summary>
-    public static int GCD(int a, int b)
+    public static int Gcd(int a, int b)
     {
         if (a == 0 && b == 0) throw new InvalidOperationException("GCD isn't defined for two zeroes.");
         if (a == 0 || b == 0) return Math.Abs(a + b); // gcd of 0 and another number is the absolute value of this number
-        if (a < 0 || b < 0) return GCD(Math.Abs(a), Math.Abs(b)); // gcd(a, b) == gcd(|a|,|b|)
+        if (a < 0 || b < 0) return Gcd(Math.Abs(a), Math.Abs(b)); // gcd(a, b) == gcd(|a|,|b|)
 
         while (b != 0) b = a % (a = b);
         return a;
@@ -85,11 +85,11 @@ public static class MathEx
     /// <summary>
     /// Returns greatest common divisor of a and b.
     /// </summary>
-    public static long GCD(long a, long b)
+    public static long Gcd(long a, long b)
     {
         if (a == 0 && b == 0) throw new InvalidOperationException("GCD isn't defined for two zeroes.");
         if (a == 0 || b == 0) return Math.Abs(a + b); // gcd of 0 and another number is the absolute value of this number
-        if (a < 0 || b < 0) return GCD(Math.Abs(a), Math.Abs(b)); // gcd(a, b) == gcd(|a|,|b|)
+        if (a < 0 || b < 0) return Gcd(Math.Abs(a), Math.Abs(b)); // gcd(a, b) == gcd(|a|,|b|)
 
         while (b != 0) b = a % (a = b);
         return a;
@@ -98,51 +98,51 @@ public static class MathEx
     /// <summary>
     /// Returns greatest common divisor of all values.
     /// </summary>
-    public static int GCD(params int[] values)
+    public static int Gcd(params int[] values)
     {
-        return values.Aggregate(GCD);
+        return values.Aggregate(Gcd);
     }
 
     /// <summary>
     /// Returns greatest common divisor of all values.
     /// </summary>
-    public static long GCD(params long[] values)
+    public static long Gcd(params long[] values)
     {
-        return values.Aggregate(GCD);
+        return values.Aggregate(Gcd);
     }
     #endregion
 
-    #region LCM
+    #region Lcm
     /// <summary>
     /// Returns least common multiplier of a and b.
     /// </summary>
-    public static int LCM(int a, int b)
+    public static int Lcm(int a, int b)
     {
-        return Math.Abs(a / GCD(a, b) * b);
+        return Math.Abs(a / Gcd(a, b) * b);
     }
 
     /// <summary>
     /// Returns least common multiplier of a and b.
     /// </summary>
-    public static long LCM(long a, long b)
+    public static long Lcm(long a, long b)
     {
-        return Math.Abs(a / GCD(a, b) * b);
+        return Math.Abs(a / Gcd(a, b) * b);
     }
 
     /// <summary>
     /// Returns least common multiplier of all values.
     /// </summary>
-    public static int LCM(params int[] values)
+    public static int Lcm(params int[] values)
     {
-        return values.Aggregate(LCM);
+        return values.Aggregate(Lcm);
     }
 
     /// <summary>
     /// Returns least common multiplier of all values.
     /// </summary>
-    public static long LCM(params long[] values)
+    public static long Lcm(params long[] values)
     {
-        return values.Aggregate(LCM);
+        return values.Aggregate(Lcm);
     }
     #endregion
 

@@ -158,6 +158,8 @@ public static class GenericEnumerableExtensions
     {
         if (source == null) throw new ArgumentNullException("source");
         if (selector == null) throw new ArgumentNullException("selector");
+        
+        source = source.ToList(); // to avoid multiple enumeration
         if (source.Empty()) throw new InvalidOperationException("Source is empty");
 
         TSource min = source.First();
@@ -184,6 +186,8 @@ public static class GenericEnumerableExtensions
     {
         if (source == null) throw new ArgumentNullException("source");
         if (selector == null) throw new ArgumentNullException("selector");
+
+        source = source.ToList(); // to avoid multiple enumeration
         if (source.Empty()) throw new InvalidOperationException("Source is empty");
 
         TSource max = source.First();
@@ -209,6 +213,8 @@ public static class GenericEnumerableExtensions
     public static TSource Random<TSource>(this IEnumerable<TSource> source)
     {
         if (source == null) throw new ArgumentNullException("source");
+
+        source = source.ToList(); // to avoid multiple enumeration
         if (source.Empty()) throw new InvalidOperationException("Source is empty");
 
         Random rng = new Random();
@@ -232,6 +238,7 @@ public static class GenericEnumerableExtensions
         if (separator == null) throw new ArgumentNullException("separator");
         if (formatString == null) throw new ArgumentNullException("formatString");
 
+        source = source.ToList(); // to avoid multiple enumeration
         if (source.Empty()) return String.Empty;
 
         string result = source.

@@ -14,6 +14,7 @@ public static class CompareUtils
 
     public static bool IsLess<T>(this T x, T y, IComparer<T> comparer)
     {
+        if (comparer == null) comparer = Comparer<T>.Default;
         return comparer.Compare(x, y) < 0;
     }
     #endregion
@@ -26,6 +27,7 @@ public static class CompareUtils
 
     public static bool IsGreater<T>(this T x, T y, IComparer<T> comparer)
     {
+        if (comparer == null) comparer = Comparer<T>.Default;
         return comparer.Compare(x, y) > 0;
     }
     #endregion
@@ -38,6 +40,7 @@ public static class CompareUtils
 
     public static bool IsLessOrEqual<T>(this T x, T y, IComparer<T> comparer)
     {
+        if (comparer == null) comparer = Comparer<T>.Default;
         return comparer.Compare(x, y) <= 0;
     }
     #endregion
@@ -50,6 +53,7 @@ public static class CompareUtils
 
     public static bool IsGreaterOrEqual<T>(this T x, T y, IComparer<T> comparer)
     {
+        if (comparer == null) comparer = Comparer<T>.Default;
         return comparer.Compare(x, y) >= 0;
     }
     #endregion
@@ -68,6 +72,7 @@ public static class CompareUtils
     /// </summary>
     public static bool InRange<T>(this T value, T min, T max, IComparer<T> comparer)
     {
+        if (comparer == null) comparer = Comparer<T>.Default;
         if (min.IsGreater(max, comparer)) throw new ArgumentException("Min is greater than max.");
 
         return value.IsGreaterOrEqual(min, comparer) && value.IsLess(max, comparer);
@@ -92,6 +97,7 @@ public static class CompareUtils
     /// </summary>
     public static T Clamp<T>(T value, T min, T max, IComparer<T> comparer)
     {
+        if (comparer == null) comparer = Comparer<T>.Default;
         if (min.IsGreater(max, comparer)) throw new ArgumentException("Min must be less than or equal to max.");
 
         if (value.IsGreater(max, comparer)) return max;

@@ -39,6 +39,8 @@ public static class DateTimeUtils
     /// <returns></returns>
     public static int CalculateAge(this DateTime birthDate, DateTime referenceDate)
     {
+        if (referenceDate < birthDate) throw new ArgumentException("Reference date cannot be less than birth date.");
+
         int years = referenceDate.Year - birthDate.Year;
         if (referenceDate.Month < birthDate.Month ||
             (referenceDate.Month == birthDate.Month && referenceDate.Day < birthDate.Day))
@@ -81,9 +83,21 @@ public static class DateTimeUtils
     /// <returns></returns>
     public static DateTime FromUnixTime(long unixTime, bool withMilliseconds = false)
     {
-        return UnixStartDate +
-            (withMilliseconds ?
-            TimeSpan.FromMilliseconds(unixTime) :
-            TimeSpan.FromSeconds(unixTime));
+        var exception = new Lazy<OverflowException>(() => 
+            new OverflowException("Specified unix time represents too long time period."));
+
+        try
+        {
+            return UnixStartDate
+                   + (withMilliseconds ? TimeSpan.FromMilliseconds(unixTime) : TimeSpan.FromSeconds(unixTime));
+        }
+        catch (OverflowException)
+        {
+            throw exception.Value;
+        }
+        catch (ArgumentOutOfRangeException)
+        {
+            throw exception.Value;
+        }
     }
 }

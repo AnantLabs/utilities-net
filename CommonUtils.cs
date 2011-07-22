@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 /// <summary>
@@ -10,17 +9,19 @@ public static class CommonUtils
     /// <summary>
     /// Tests whether this object is null.
     /// </summary>
-    public static bool IsNull(this object obj)
+    public static bool IsNull<T>(this T arg)
+        where T : class
     {
-        return obj == null;
+        return arg == null;
     }
 
     /// <summary>
     /// Tests whether this object is not null.
     /// </summary>
-    public static bool IsNotNull(this object obj)
+    public static bool IsNotNull<T>(this T arg)
+        where T : class
     {
-        return obj != null;
+        return arg != null;
     }
 
     /// <summary>
@@ -28,6 +29,7 @@ public static class CommonUtils
     /// </summary>
     public static bool IsOneOf<T>(this T obj, params T[] values)
     {
+        if(values == null) return false;
         return values.Contains(obj);
     }
 
@@ -37,6 +39,7 @@ public static class CommonUtils
     public static T CloneT<T>(this T t)
         where T : ICloneable
     {
+        if (t == null) throw new ArgumentNullException("t");
         return (T)t.Clone();
     }
 
@@ -47,7 +50,7 @@ public static class CommonUtils
     /// </summary>
     public static T TryNullReference<T>(this Func<T> function)
     {
-        return TryNullReference<T>(function, default(T));
+        return TryNullReference(function, default(T));
     }
 
     /// <summary>
@@ -74,6 +77,8 @@ public static class CommonUtils
     /// </summary>
     public static T Try<T>(this Func<T> function, T defaultValue, params Type[] exceptions)
     {
+        if(function == null) throw new ArgumentNullException("function");
+
         if (exceptions != null &&
             !exceptions.All(e => e.IsAssignableFrom(typeof(Exception))))
             throw new ArgumentException("Some of specified types aren't exception types.", "exceptions");

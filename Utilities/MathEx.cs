@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 /// <summary>
 /// Common numeric utility methods.
 /// </summary>
-public static class MathEx
+public static partial class MathEx
 {
     #region Lerp (linear interpolation)
     /// <summary>
@@ -72,22 +73,10 @@ public static class MathEx
     /// <summary>
     /// Returns greatest common divisor of a and b.
     /// </summary>
-    public static int Gcd(int a, int b)
+    public static dynamic Gcd(dynamic a, dynamic b)
     {
         if (a == 0 && b == 0) throw new InvalidOperationException("GCD isn't defined for two zeroes.");
-        if (a == 0 || b == 0) return Math.Abs(a + b); // gcd of 0 and another number is the absolute value of this number
-        if (a < 0 || b < 0) return Gcd(Math.Abs(a), Math.Abs(b)); // gcd(a, b) == gcd(|a|,|b|)
 
-        while (b != 0) b = a % (a = b);
-        return a;
-    }
-
-    /// <summary>
-    /// Returns greatest common divisor of a and b.
-    /// </summary>
-    public static long Gcd(long a, long b)
-    {
-        if (a == 0 && b == 0) throw new InvalidOperationException("GCD isn't defined for two zeroes.");
         if (a == 0 || b == 0) return Math.Abs(a + b); // gcd of 0 and another number is the absolute value of this number
         if (a < 0 || b < 0) return Gcd(Math.Abs(a), Math.Abs(b)); // gcd(a, b) == gcd(|a|,|b|)
 
@@ -98,17 +87,22 @@ public static class MathEx
     /// <summary>
     /// Returns greatest common divisor of all values.
     /// </summary>
-    public static int Gcd(params int[] values)
+    public static dynamic Gcd(params dynamic[] values)
     {
+        if (values == null) throw new ArgumentNullException("values");
+        if (values.Length == 0) throw new InvalidOperationException("Cannot calculate GCD for 0 elements.");
+
         return values.Aggregate(Gcd);
     }
 
     /// <summary>
     /// Returns greatest common divisor of all values.
     /// </summary>
-    public static long Gcd(params long[] values)
+    public static dynamic Gcd(IEnumerable<dynamic> values)
     {
-        return values.Aggregate(Gcd);
+        if (values == null) throw new ArgumentNullException("values");
+
+        return Gcd(values.ToArray());
     }
     #endregion
 
@@ -116,15 +110,7 @@ public static class MathEx
     /// <summary>
     /// Returns least common multiplier of a and b.
     /// </summary>
-    public static int Lcm(int a, int b)
-    {
-        return Math.Abs(a / Gcd(a, b) * b);
-    }
-
-    /// <summary>
-    /// Returns least common multiplier of a and b.
-    /// </summary>
-    public static long Lcm(long a, long b)
+    public static dynamic Lcm(dynamic a, dynamic b)
     {
         return Math.Abs(a / Gcd(a, b) * b);
     }
@@ -132,16 +118,11 @@ public static class MathEx
     /// <summary>
     /// Returns least common multiplier of all values.
     /// </summary>
-    public static int Lcm(params int[] values)
+    public static dynamic Lcm(params dynamic[] values)
     {
-        return values.Aggregate(Lcm);
-    }
+        if (values == null) throw new ArgumentNullException("values");
+        if (values.Length == 0) throw new InvalidOperationException("Cannot calculate GCD for 0 elements.");
 
-    /// <summary>
-    /// Returns least common multiplier of all values.
-    /// </summary>
-    public static long Lcm(params long[] values)
-    {
         return values.Aggregate(Lcm);
     }
     #endregion

@@ -5,14 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4E4A7BD0-821F-44E2-8842-BC49CDDA0D73}</ProjectGuid>
+    <ProjectGuid>{240E5097-8D5C-4532-9BE2-D4D0F123FB52}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Utilities</RootNamespace>
     <AssemblyName>Utilities</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,8 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,8 +29,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -53,13 +48,19 @@
     <Compile Include="Collections\EnumerableEx.cs" />
     <Compile Include="Collections\EnumerableExtensions.cs" />
     <Compile Include="Collections\GenericCollectionExtensions.cs" />
+    <Compile Include="Collections\GenericEnumerableExtensions.cs" />
     <Compile Include="CommonUtils.cs" />
     <Compile Include="CompareUtils.cs" />
     <Compile Include="DateTimeUtils.cs" />
-    <Compile Include="Collections\GenericEnumerableExtensions.cs" />
     <Compile Include="ImageUtils.cs" />
     <Compile Include="InternetUtils.cs" />
-    <Compile Include="NumericUtils.cs" />
+    <Compile Include="MathEx.cs" />
+    <Compile Include="MathEx.Gcd.cs" />
+    <Compile Include="MathEx.IsPrime.cs" />
+    <Compile Include="MathEx.Lcm.cs" />
+    <Compile Include="MathEx.Lerp.cs" />
+    <Compile Include="MathEx.Max.cs" />
+    <Compile Include="MathEx.Min.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StreamUtils.cs" />
     <Compile Include="StringUtils.cs" />

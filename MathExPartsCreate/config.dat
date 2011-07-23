@@ -1,0 +1,164 @@
+﻿Abs
+sbyte short int long float double decimal
+/////
+    /// <summary>
+    /// Returns absolute value of parameter.
+    /// </summary>
+    public static {TYPE} Abs({TYPE} value)
+    {
+        if(value >= 0) return value;
+		else if(value < 0) {
+			if(value == {TYPE}.MinValue)
+				throw new OverflowException("Can't negate minimum value of type {TYPE}.");
+			else
+				return ({TYPE})-value;
+		}
+		throw new InvalidOperationException("This shouldn't happen: !(value >= 0) && !(value < 0).");
+    }
+/////
+
+Abs
+byte ushort uint ulong
+/////
+    /// <summary>
+    /// Returns absolute value of parameter.
+    /// </summary>
+    public static {TYPE} Abs({TYPE} value)
+    {
+		return value;
+    }
+/////
+
+Min
+byte sbyte short ushort int uint long ulong float double decimal
+/////
+    /// <summary>
+    /// Returns minimum of specified values.
+    /// </summary>
+    public static {TYPE} Min(params {TYPE}[] values)
+    {
+        return values.Min();
+    }
+/////
+
+Max
+byte sbyte short ushort int uint long ulong float double decimal
+/////
+    /// <summary>
+    /// Returns maximum of specified values.
+    /// </summary>
+    public static {TYPE} Max(params {TYPE}[] values)
+    {
+        return values.Max();
+    }
+/////
+
+Lerp
+float double
+/////
+    /// <summary>
+    /// Linear interpolation: left + (right - left) * frac.
+    /// </summary>
+    public static {TYPE} Lerp({TYPE} left, {TYPE} right, {TYPE} frac)
+    {
+        return left + (right - left) * frac;
+    }
+/////
+
+IsPrime
+short ushort int uint long ulong
+/////
+    /// <summary>
+    /// Tests whether a number is prime.
+	/// It takes about 1 ms for numbers near int.MaxValue and some minutes for numbers near long.MaxValue on my laptop.
+    /// </summary>
+    public static bool IsPrime({TYPE} number)
+    {
+        if (number <= 1) return false;
+        if (number == 2) return true;
+        if (number % 2 == 0) return false;
+
+        {TYPE} max = ({TYPE})(Math.Sqrt(number) + 1);
+        for ({TYPE} i = 3; i < max; i += 2)
+        {
+            if (number % i == 0) return false;
+        }
+
+        return true;
+    }
+/////
+
+Gcd
+short ushort int uint long ulong
+/////
+    /// <summary>
+    /// Returns greatest common divisor of a and b.
+    /// </summary>
+    public static {TYPE} Gcd({TYPE} a, {TYPE} b)
+    {
+        if (a == 0 && b == 0) throw new InvalidOperationException("Gcd isn't defined for two zeroes.");
+		
+		// Gcd of 0 and another number is the absolute value of this number
+        if (a == 0) return b;		
+        if (b == 0) return a;		
+		
+        if (a < 0 || b < 0) return Gcd(Abs(a), Abs(b)); // Gcd(a, b) == Gcd(|a|,|b|)
+
+        while (b != 0) b = ({TYPE})(a % (a = b));
+        return a;
+    }
+
+    /// <summary>
+    /// Returns greatest common divisor of all values.
+    /// </summary>
+    public static {TYPE} Gcd(params {TYPE}[] values)
+    {
+        if (values == null) throw new ArgumentNullException("values");
+        if (values.Length == 0) throw new InvalidOperationException("Cannot calculate Gcd for 0 elements.");
+
+        return values.Aggregate(Gcd);
+    }
+
+    /// <summary>
+    /// Returns greatest common divisor of all values.
+    /// </summary>
+    public static {TYPE} Gcd(IEnumerable<{TYPE}> values)
+    {
+        if (values == null) throw new ArgumentNullException("values");
+
+        return Gcd(values.ToArray());
+    }
+/////
+
+Lcm
+short ushort int uint long ulong
+/////
+    /// <summary>
+    /// Returns least common multiplier of a and b.
+    /// </summary>
+    public static {TYPE} Lcm({TYPE} a, {TYPE} b)
+    {
+        return ({TYPE})Abs(a / Gcd(a, b) * b);
+    }
+
+    /// <summary>
+    /// Returns least common multiplier of all values.
+    /// </summary>
+    public static {TYPE} Lcm(params {TYPE}[] values)
+    {
+        if (values == null) throw new ArgumentNullException("values");
+        if (values.Length == 0) throw new InvalidOperationException("Cannot calculate Lcm for 0 elements.");
+
+        return values.Aggregate(Lcm);
+    }
+
+    /// <summary>
+    /// Returns greatest common divisor of all values.
+    /// </summary>
+    public static {TYPE} Lcm(IEnumerable<{TYPE}> values)
+    {
+        if (values == null) throw new ArgumentNullException("values");
+
+        return Gcd(values.ToArray());
+    }
+/////

@@ -1,0 +1,892 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Utilities.Moles</name>
+    </assembly>
+    <members>
+        <member name="T:Moles.MCollectionExtensions">
+            <summary>Mole type of <see cref="T:CollectionExtensions"/>
+            .</summary>
+        </member>
+        <member name="M:Moles.MCollectionExtensions.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Moles.MCollectionExtensions.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Moles.MCollectionExtensions.AddRangeIListIEnumerable">
+            <summary>Sets the mole of <see cref="M:CollectionExtensions.AddRange(T:System.Collections.IList,T:System.Collections.IEnumerable)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MCollectionExtensions.AddRangeIListObjectArray">
+            <summary>Sets the mole of <see cref="M:CollectionExtensions.AddRange(T:System.Collections.IList,T:System.Object[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MCollectionExtensions.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Moles.MCollectionExtensions.IsValidIndexIListInt32">
+            <summary>Sets the mole of <see cref="M:CollectionExtensions.IsValidIndex(T:System.Collections.IList,T:System.Int32)"/>
+            </summary>
+        </member>
+        <member name="T:Moles.MCommonUtils">
+            <summary>Mole type of <see cref="T:CommonUtils"/>
+            .</summary>
+        </member>
+        <member name="M:Moles.MCommonUtils.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Moles.MCommonUtils.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Moles.MCommonUtils.CloneTT``1(Microsoft.Moles.Framework.MolesDelegates.Func{``0,``0})">
+            <summary>Sets the mole of <see cref="M:CommonUtils.CloneT``1(``0)"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MCommonUtils.IsNotNullT``1(Microsoft.Moles.Framework.MolesDelegates.Func{``0,System.Boolean})">
+            <summary>Sets the mole of <see cref="M:CommonUtils.IsNotNull``1(``0)"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MCommonUtils.IsNullT``1(Microsoft.Moles.Framework.MolesDelegates.Func{``0,System.Boolean})">
+            <summary>Sets the mole of <see cref="M:CommonUtils.IsNull``1(``0)"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MCommonUtils.IsOneOfTTArray``1(Microsoft.Moles.Framework.MolesDelegates.Func{``0,``0[],System.Boolean})">
+            <summary>Sets the mole of <see cref="M:CommonUtils.IsOneOf``1(``0,``0[])"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MCommonUtils.TryFuncOfTTTypeArray``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Func{``0},``0,System.Type[],``0})">
+            <summary>Sets the mole of <see cref="M:CommonUtils.Try``1(System.Func`1{``0},``0,T:System.Type[])"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MCommonUtils.TryNullReferenceFuncOfTT``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Func{``0},``0,``0})">
+            <summary>Sets the mole of <see cref="M:CommonUtils.TryNullReference``1(System.Func`1{``0},``0)"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MCommonUtils._Tryb__0Type``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Type,System.Boolean})">
+            <summary>Sets the mole of <see cref="M:CommonUtils.&lt;Try&gt;b__0``1(T:System.Type)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MCommonUtils.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="T:Moles.MCompareUtils">
+            <summary>Mole type of <see cref="T:CompareUtils"/>
+            .</summary>
+        </member>
+        <member name="M:Moles.MCompareUtils.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Moles.MCompareUtils.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Moles.MCompareUtils.ClampTTT``1(Microsoft.Moles.Framework.MolesDelegates.Func{``0,``0,``0,``0})">
+            <summary>Sets the mole of <see cref="M:CompareUtils.Clamp``1(``0,``0,``0)"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MCompareUtils.ClampTTTIComparerOfT``1(Microsoft.Moles.Framework.MolesDelegates.Func{``0,``0,``0,System.Collections.Generic.IComparer{``0},``0})">
+            <summary>Sets the mole of <see cref="M:CompareUtils.Clamp``1(``0,``0,``0,System.Collections.Generic.IComparer`1{``0})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MCompareUtils.InRangeTTT``1(Microsoft.Moles.Framework.MolesDelegates.Func{``0,``0,``0,System.Boolean})">
+            <summary>Sets the mole of <see cref="M:CompareUtils.InRange``1(``0,``0,``0)"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MCompareUtils.InRangeTTTIComparerOfT``1(Microsoft.Moles.Framework.MolesDelegates.Func{``0,``0,``0,System.Collections.Generic.IComparer{``0},System.Boolean})">
+            <summary>Sets the mole of <see cref="M:CompareUtils.InRange``1(``0,``0,``0,System.Collections.Generic.IComparer`1{``0})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MCompareUtils.IsGreaterOrEqualTT``1(Microsoft.Moles.Framework.MolesDelegates.Func{``0,``0,System.Boolean})">
+            <summary>Sets the mole of <see cref="M:CompareUtils.IsGreaterOrEqual``1(``0,``0)"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MCompareUtils.IsGreaterOrEqualTTIComparerOfT``1(Microsoft.Moles.Framework.MolesDelegates.Func{``0,``0,System.Collections.Generic.IComparer{``0},System.Boolean})">
+            <summary>Sets the mole of <see cref="M:CompareUtils.IsGreaterOrEqual``1(``0,``0,System.Collections.Generic.IComparer`1{``0})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MCompareUtils.IsGreaterTT``1(Microsoft.Moles.Framework.MolesDelegates.Func{``0,``0,System.Boolean})">
+            <summary>Sets the mole of <see cref="M:CompareUtils.IsGreater``1(``0,``0)"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MCompareUtils.IsGreaterTTIComparerOfT``1(Microsoft.Moles.Framework.MolesDelegates.Func{``0,``0,System.Collections.Generic.IComparer{``0},System.Boolean})">
+            <summary>Sets the mole of <see cref="M:CompareUtils.IsGreater``1(``0,``0,System.Collections.Generic.IComparer`1{``0})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MCompareUtils.IsLessOrEqualTT``1(Microsoft.Moles.Framework.MolesDelegates.Func{``0,``0,System.Boolean})">
+            <summary>Sets the mole of <see cref="M:CompareUtils.IsLessOrEqual``1(``0,``0)"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MCompareUtils.IsLessOrEqualTTIComparerOfT``1(Microsoft.Moles.Framework.MolesDelegates.Func{``0,``0,System.Collections.Generic.IComparer{``0},System.Boolean})">
+            <summary>Sets the mole of <see cref="M:CompareUtils.IsLessOrEqual``1(``0,``0,System.Collections.Generic.IComparer`1{``0})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MCompareUtils.IsLessTT``1(Microsoft.Moles.Framework.MolesDelegates.Func{``0,``0,System.Boolean})">
+            <summary>Sets the mole of <see cref="M:CompareUtils.IsLess``1(``0,``0)"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MCompareUtils.IsLessTTIComparerOfT``1(Microsoft.Moles.Framework.MolesDelegates.Func{``0,``0,System.Collections.Generic.IComparer{``0},System.Boolean})">
+            <summary>Sets the mole of <see cref="M:CompareUtils.IsLess``1(``0,``0,System.Collections.Generic.IComparer`1{``0})"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MCompareUtils.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="T:Moles.MDateTimeUtils">
+            <summary>Mole type of <see cref="T:DateTimeUtils"/>
+            .</summary>
+        </member>
+        <member name="M:Moles.MDateTimeUtils.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Moles.MDateTimeUtils.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Moles.MDateTimeUtils.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Moles.MDateTimeUtils.CalculateAgeDateTime">
+            <summary>Sets the mole of <see cref="M:DateTimeUtils.CalculateAge(T:System.DateTime)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MDateTimeUtils.CalculateAgeDateTimeDateTime">
+            <summary>Sets the mole of <see cref="M:DateTimeUtils.CalculateAge(T:System.DateTime,T:System.DateTime)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MDateTimeUtils.DaysInMonthDateTime">
+            <summary>Sets the mole of <see cref="M:DateTimeUtils.DaysInMonth(T:System.DateTime)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MDateTimeUtils.FromUnixTimeInt64Boolean">
+            <summary>Sets the mole of <see cref="M:DateTimeUtils.FromUnixTime(T:System.Int64,T:System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MDateTimeUtils.ToUnixTimeDateTimeBoolean">
+            <summary>Sets the mole of <see cref="M:DateTimeUtils.ToUnixTime(T:System.DateTime,T:System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MDateTimeUtils.UtcOffsetGet">
+            <summary>Sets the mole of <see cref="P:DateTimeUtils.UtcOffset"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MDateTimeUtils._FromUnixTimeb__0">
+            <summary>Sets the mole of <see cref="M:DateTimeUtils.&lt;FromUnixTime&gt;b__0"/>
+            </summary>
+        </member>
+        <member name="T:Moles.MEnumerableEx">
+            <summary>Mole type of <see cref="T:EnumerableEx"/>
+            .</summary>
+        </member>
+        <member name="M:Moles.MEnumerableEx.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:Moles.MEnumerableEx.#ctor(EnumerableEx)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:Moles.MEnumerableEx.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Moles.MEnumerableEx.MakeEnumerableTSource``1(Microsoft.Moles.Framework.MolesDelegates.Func{``0,System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the mole of <see cref="M:EnumerableEx.MakeEnumerable``1(``0)"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MEnumerableEx.MakeEnumerableTSourceArray``1(Microsoft.Moles.Framework.MolesDelegates.Func{``0[],System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the mole of <see cref="M:EnumerableEx.MakeEnumerable``1(``0[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MEnumerableEx.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Moles.MEnumerableEx.Constructor">
+            <summary>Sets the mole of <see cref="M:EnumerableEx.#ctor"/>
+            </summary>
+        </member>
+        <member name="T:Moles.MEnumerableEx.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="T:Moles.MEnumerableExtensions">
+            <summary>Mole type of <see cref="T:EnumerableExtensions"/>
+            .</summary>
+        </member>
+        <member name="M:Moles.MEnumerableExtensions.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Moles.MEnumerableExtensions.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Moles.MEnumerableExtensions.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Moles.MEnumerableExtensions.EmptyIEnumerable">
+            <summary>Sets the mole of <see cref="M:EnumerableExtensions.Empty(T:System.Collections.IEnumerable)"/>
+            </summary>
+        </member>
+        <member name="T:Moles.MGenericCollectionExtensions">
+            <summary>Mole type of <see cref="T:GenericCollectionExtensions"/>
+            .</summary>
+        </member>
+        <member name="M:Moles.MGenericCollectionExtensions.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Moles.MGenericCollectionExtensions.AddRangeICollectionOfTSourceIEnumerableOfTSource``1(Microsoft.Moles.Framework.MolesDelegates.Action{System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the mole of <see cref="M:GenericCollectionExtensions.AddRange``1(System.Collections.Generic.ICollection`1{``0},System.Collections.Generic.IEnumerable`1{``0})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericCollectionExtensions.AddRangeICollectionOfTSourceTSourceArray``1(Microsoft.Moles.Framework.MolesDelegates.Action{System.Collections.Generic.ICollection{``0},``0[]})">
+            <summary>Sets the mole of <see cref="M:GenericCollectionExtensions.AddRange``1(System.Collections.Generic.ICollection`1{``0},``0[])"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericCollectionExtensions.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Moles.MGenericCollectionExtensions.InvertIEnumerableOfKeyValuePairOfTKeyTValue``2(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}},System.Collections.Generic.Dictionary{``1,``0}})">
+            <summary>Sets the mole of <see cref="M:GenericCollectionExtensions.Invert``2(System.Collections.Generic.IEnumerable`1{System.Collections.Generic.KeyValuePair`2{``0,``1}})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericCollectionExtensions.IsValidIndexIListOfTSourceInt32``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IList{``0},System.Int32,System.Boolean})">
+            <summary>Sets the mole of <see cref="M:GenericCollectionExtensions.IsValidIndex``1(System.Collections.Generic.IList`1{``0},T:System.Int32)"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericCollectionExtensions._Invertb__0KeyValuePairOfTKeyTValue``2(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.KeyValuePair{``0,``1},``1})">
+            <summary>Sets the mole of <see cref="M:GenericCollectionExtensions.&lt;Invert&gt;b__0``2(System.Collections.Generic.KeyValuePair`2{``0,``1})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericCollectionExtensions._Invertb__1KeyValuePairOfTKeyTValue``2(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.KeyValuePair{``0,``1},``0})">
+            <summary>Sets the mole of <see cref="M:GenericCollectionExtensions.&lt;Invert&gt;b__1``2(System.Collections.Generic.KeyValuePair`2{``0,``1})"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MGenericCollectionExtensions.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="T:Moles.MGenericEnumerableExtensions">
+            <summary>Mole type of <see cref="T:GenericEnumerableExtensions"/>
+            .</summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.AggregateIEnumerableOfTSourceFuncOfTSourceTDestStringString``2(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.String,System.String,System.String})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.Aggregate``2(System.Collections.Generic.IEnumerable`1{``0},System.Func`2{``0,``1},T:System.String,T:System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.AggregateIEnumerableOfTSourceStringString``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.String,System.String,System.String})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.Aggregate``1(System.Collections.Generic.IEnumerable`1{``0},T:System.String,T:System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.ConcatIEnumerableOfTSourceTSource``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IEnumerable{``0},``0,System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.Concat``1(System.Collections.Generic.IEnumerable`1{``0},``0)"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.ConcatIEnumerableOfTSourceTSourceArray``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IEnumerable{``0},``0[],System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.Concat``1(System.Collections.Generic.IEnumerable`1{``0},``0[])"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.EmptyIEnumerableOfTSource``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Boolean})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.Empty``1(System.Collections.Generic.IEnumerable`1{``0})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.FlattenIEnumerableOfIEnumerableOfTSource``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{``0}},System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.Flatten``1(System.Collections.Generic.IEnumerable`1{System.Collections.Generic.IEnumerable`1{``0}})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.ForEachIEnumerableOfTSourceActionOfTSource``1(Microsoft.Moles.Framework.MolesDelegates.Action{System.Collections.Generic.IEnumerable{``0},System.Action{``0}})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable`1{``0},System.Action`1{``0})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.MaxItemIEnumerableOfTSourceFuncOfTSourceTKey``2(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},``0})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.MaxItem``2(System.Collections.Generic.IEnumerable`1{``0},System.Func`2{``0,``1})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.MinItemIEnumerableOfTSourceFuncOfTSourceTKey``2(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},``0})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.MinItem``2(System.Collections.Generic.IEnumerable`1{``0},System.Func`2{``0,``1})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.RandomIEnumerableOfTSource``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IEnumerable{``0},``0})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.Random``1(System.Collections.Generic.IEnumerable`1{``0})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.SkipLastIEnumerableOfTSourceInt32``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Int32,System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.SkipLast``1(System.Collections.Generic.IEnumerable`1{``0},T:System.Int32)"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.SkipUntilIEnumerableOfTSourceFuncOfTSourceBoolean``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean},System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.SkipUntil``1(System.Collections.Generic.IEnumerable`1{``0},System.Func`2{``0,T:System.Boolean})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.SkipUntilIEnumerableOfTSourceFuncOfTSourceInt32Boolean``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32,System.Boolean},System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.SkipUntil``1(System.Collections.Generic.IEnumerable`1{``0},System.Func`3{``0,T:System.Int32,T:System.Boolean})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.TakeUntilIEnumerableOfTSourceFuncOfTSourceBoolean``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean},System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.TakeUntil``1(System.Collections.Generic.IEnumerable`1{``0},System.Func`2{``0,T:System.Boolean})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.TakeUntilIEnumerableOfTSourceFuncOfTSourceInt32Boolean``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32,System.Boolean},System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.TakeUntil``1(System.Collections.Generic.IEnumerable`1{``0},System.Func`3{``0,T:System.Int32,T:System.Boolean})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.WhereNotIEnumerableOfTSourceFuncOfTSourceBoolean``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean},System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.WhereNot``1(System.Collections.Generic.IEnumerable`1{``0},System.Func`2{``0,T:System.Boolean})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions.WhereNotIEnumerableOfTSourceFuncOfTSourceInt32Boolean``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32,System.Boolean},System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.WhereNot``1(System.Collections.Generic.IEnumerable`1{``0},System.Func`3{``0,T:System.Int32,T:System.Boolean})"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions._Aggregateb__1fStringBuilder``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Text.StringBuilder,System.String})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.&lt;Aggregate&gt;b__1f``1(T:System.Text.StringBuilder)"/>
+            </summary>
+        </member>
+        <member name="M:Moles.MGenericEnumerableExtensions._Flattenb__1dIEnumerableOfTSource``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the mole of <see cref="M:GenericEnumerableExtensions.&lt;Flatten&gt;b__1d``1(System.Collections.Generic.IEnumerable`1{``0})"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MGenericEnumerableExtensions.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="T:Moles.MImageUtils">
+            <summary>Mole type of <see cref="T:ImageUtils"/>
+            .</summary>
+        </member>
+        <member name="M:Moles.MImageUtils.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Moles.MImageUtils.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Moles.MImageUtils.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Moles.MImageUtils.DownloadString">
+            <summary>Sets the mole of <see cref="M:ImageUtils.Download(T:System.String)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MImageUtils.DownloadUri">
+            <summary>Sets the mole of <see cref="M:ImageUtils.Download(T:System.Uri)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MImageUtils.GetJpegBytesImageInt32">
+            <summary>Sets the mole of <see cref="M:ImageUtils.GetJpegBytes(T:System.Drawing.Image,T:System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MImageUtils.GrayscaleImage">
+            <summary>Sets the mole of <see cref="M:ImageUtils.Grayscale(T:System.Drawing.Image)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MImageUtils.ScaleImageInt32Int32">
+            <summary>Sets the mole of <see cref="M:ImageUtils.Scale(T:System.Drawing.Image,T:System.Int32,T:System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MImageUtils.ScaleImageSize">
+            <summary>Sets the mole of <see cref="M:ImageUtils.Scale(T:System.Drawing.Image,T:System.Drawing.Size)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MImageUtils.ShrinkImageInt32Int32">
+            <summary>Sets the mole of <see cref="M:ImageUtils.Shrink(T:System.Drawing.Image,T:System.Int32,T:System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MImageUtils.ToBitmapBitmapSource">
+            <summary>Sets the mole of <see cref="M:ImageUtils.ToBitmap(T:System.Windows.Media.Imaging.BitmapSource)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MImageUtils.ToBitmapSourceBitmap">
+            <summary>Sets the mole of <see cref="M:ImageUtils.ToBitmapSource(T:System.Drawing.Bitmap)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MImageUtils._GetJpegBytesb__1ImageCodecInfo">
+            <summary>Sets the mole of <see cref="M:ImageUtils.&lt;GetJpegBytes&gt;b__1(T:System.Drawing.Imaging.ImageCodecInfo)"/>
+            </summary>
+        </member>
+        <member name="T:Moles.MInternetUtils">
+            <summary>Mole type of <see cref="T:InternetUtils"/>
+            .</summary>
+        </member>
+        <member name="M:Moles.MInternetUtils.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Moles.MInternetUtils.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Moles.MInternetUtils.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Moles.MInternetUtils.FetchString">
+            <summary>Sets the mole of <see cref="M:InternetUtils.Fetch(T:System.String)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MInternetUtils.FetchUri">
+            <summary>Sets the mole of <see cref="M:InternetUtils.Fetch(T:System.Uri)"/>
+            </summary>
+        </member>
+        <member name="T:Moles.MMathEx">
+            <summary>Mole type of <see cref="T:MathEx"/>
+            .</summary>
+        </member>
+        <member name="M:Moles.MMathEx.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Moles.MMathEx.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Moles.MMathEx.AbsByte">
+            <summary>Sets the mole of <see cref="M:MathEx.Abs(T:System.Byte)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.AbsDecimal">
+            <summary>Sets the mole of <see cref="M:MathEx.Abs(T:System.Decimal)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.AbsDouble">
+            <summary>Sets the mole of <see cref="M:MathEx.Abs(T:System.Double)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.AbsInt16">
+            <summary>Sets the mole of <see cref="M:MathEx.Abs(T:System.Int16)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.AbsInt32">
+            <summary>Sets the mole of <see cref="M:MathEx.Abs(T:System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.AbsInt64">
+            <summary>Sets the mole of <see cref="M:MathEx.Abs(T:System.Int64)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.AbsSByte">
+            <summary>Sets the mole of <see cref="M:MathEx.Abs(T:System.SByte)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.AbsSingle">
+            <summary>Sets the mole of <see cref="M:MathEx.Abs(T:System.Single)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.AbsUInt16">
+            <summary>Sets the mole of <see cref="M:MathEx.Abs(T:System.UInt16)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.AbsUInt32">
+            <summary>Sets the mole of <see cref="M:MathEx.Abs(T:System.UInt32)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.AbsUInt64">
+            <summary>Sets the mole of <see cref="M:MathEx.Abs(T:System.UInt64)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Moles.MMathEx.GcdIEnumerableOfInt16">
+            <summary>Sets the mole of <see cref="M:MathEx.Gcd(System.Collections.Generic.IEnumerable`1{T:System.Int16})"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.GcdIEnumerableOfInt32">
+            <summary>Sets the mole of <see cref="M:MathEx.Gcd(System.Collections.Generic.IEnumerable`1{T:System.Int32})"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.GcdIEnumerableOfInt64">
+            <summary>Sets the mole of <see cref="M:MathEx.Gcd(System.Collections.Generic.IEnumerable`1{T:System.Int64})"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.GcdIEnumerableOfUInt16">
+            <summary>Sets the mole of <see cref="M:MathEx.Gcd(System.Collections.Generic.IEnumerable`1{T:System.UInt16})"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.GcdIEnumerableOfUInt32">
+            <summary>Sets the mole of <see cref="M:MathEx.Gcd(System.Collections.Generic.IEnumerable`1{T:System.UInt32})"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.GcdIEnumerableOfUInt64">
+            <summary>Sets the mole of <see cref="M:MathEx.Gcd(System.Collections.Generic.IEnumerable`1{T:System.UInt64})"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.GcdInt16Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Gcd(T:System.Int16[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.GcdInt16Int16">
+            <summary>Sets the mole of <see cref="M:MathEx.Gcd(T:System.Int16,T:System.Int16)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.GcdInt32Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Gcd(T:System.Int32[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.GcdInt32Int32">
+            <summary>Sets the mole of <see cref="M:MathEx.Gcd(T:System.Int32,T:System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.GcdInt64Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Gcd(T:System.Int64[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.GcdInt64Int64">
+            <summary>Sets the mole of <see cref="M:MathEx.Gcd(T:System.Int64,T:System.Int64)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.GcdUInt16Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Gcd(T:System.UInt16[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.GcdUInt16UInt16">
+            <summary>Sets the mole of <see cref="M:MathEx.Gcd(T:System.UInt16,T:System.UInt16)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.GcdUInt32Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Gcd(T:System.UInt32[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.GcdUInt32UInt32">
+            <summary>Sets the mole of <see cref="M:MathEx.Gcd(T:System.UInt32,T:System.UInt32)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.GcdUInt64Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Gcd(T:System.UInt64[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.GcdUInt64UInt64">
+            <summary>Sets the mole of <see cref="M:MathEx.Gcd(T:System.UInt64,T:System.UInt64)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.IsPrimeInt16">
+            <summary>Sets the mole of <see cref="M:MathEx.IsPrime(T:System.Int16)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.IsPrimeInt32">
+            <summary>Sets the mole of <see cref="M:MathEx.IsPrime(T:System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.IsPrimeInt64">
+            <summary>Sets the mole of <see cref="M:MathEx.IsPrime(T:System.Int64)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.IsPrimeUInt16">
+            <summary>Sets the mole of <see cref="M:MathEx.IsPrime(T:System.UInt16)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.IsPrimeUInt32">
+            <summary>Sets the mole of <see cref="M:MathEx.IsPrime(T:System.UInt32)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.IsPrimeUInt64">
+            <summary>Sets the mole of <see cref="M:MathEx.IsPrime(T:System.UInt64)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LcmIEnumerableOfInt16">
+            <summary>Sets the mole of <see cref="M:MathEx.Lcm(System.Collections.Generic.IEnumerable`1{T:System.Int16})"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LcmIEnumerableOfInt32">
+            <summary>Sets the mole of <see cref="M:MathEx.Lcm(System.Collections.Generic.IEnumerable`1{T:System.Int32})"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LcmIEnumerableOfInt64">
+            <summary>Sets the mole of <see cref="M:MathEx.Lcm(System.Collections.Generic.IEnumerable`1{T:System.Int64})"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LcmIEnumerableOfUInt16">
+            <summary>Sets the mole of <see cref="M:MathEx.Lcm(System.Collections.Generic.IEnumerable`1{T:System.UInt16})"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LcmIEnumerableOfUInt32">
+            <summary>Sets the mole of <see cref="M:MathEx.Lcm(System.Collections.Generic.IEnumerable`1{T:System.UInt32})"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LcmIEnumerableOfUInt64">
+            <summary>Sets the mole of <see cref="M:MathEx.Lcm(System.Collections.Generic.IEnumerable`1{T:System.UInt64})"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LcmInt16Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Lcm(T:System.Int16[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LcmInt16Int16">
+            <summary>Sets the mole of <see cref="M:MathEx.Lcm(T:System.Int16,T:System.Int16)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LcmInt32Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Lcm(T:System.Int32[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LcmInt32Int32">
+            <summary>Sets the mole of <see cref="M:MathEx.Lcm(T:System.Int32,T:System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LcmInt64Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Lcm(T:System.Int64[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LcmInt64Int64">
+            <summary>Sets the mole of <see cref="M:MathEx.Lcm(T:System.Int64,T:System.Int64)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LcmUInt16Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Lcm(T:System.UInt16[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LcmUInt16UInt16">
+            <summary>Sets the mole of <see cref="M:MathEx.Lcm(T:System.UInt16,T:System.UInt16)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LcmUInt32Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Lcm(T:System.UInt32[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LcmUInt32UInt32">
+            <summary>Sets the mole of <see cref="M:MathEx.Lcm(T:System.UInt32,T:System.UInt32)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LcmUInt64Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Lcm(T:System.UInt64[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LcmUInt64UInt64">
+            <summary>Sets the mole of <see cref="M:MathEx.Lcm(T:System.UInt64,T:System.UInt64)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LerpDoubleDoubleDouble">
+            <summary>Sets the mole of <see cref="M:MathEx.Lerp(T:System.Double,T:System.Double,T:System.Double)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.LerpSingleSingleSingle">
+            <summary>Sets the mole of <see cref="M:MathEx.Lerp(T:System.Single,T:System.Single,T:System.Single)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MaxByteArray">
+            <summary>Sets the mole of <see cref="M:MathEx.Max(T:System.Byte[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MaxDecimalArray">
+            <summary>Sets the mole of <see cref="M:MathEx.Max(T:System.Decimal[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MaxDoubleArray">
+            <summary>Sets the mole of <see cref="M:MathEx.Max(T:System.Double[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MaxInt16Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Max(T:System.Int16[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MaxInt32Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Max(T:System.Int32[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MaxInt64Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Max(T:System.Int64[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MaxSByteArray">
+            <summary>Sets the mole of <see cref="M:MathEx.Max(T:System.SByte[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MaxSingleArray">
+            <summary>Sets the mole of <see cref="M:MathEx.Max(T:System.Single[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MaxUInt16Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Max(T:System.UInt16[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MaxUInt32Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Max(T:System.UInt32[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MaxUInt64Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Max(T:System.UInt64[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MinByteArray">
+            <summary>Sets the mole of <see cref="M:MathEx.Min(T:System.Byte[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MinDecimalArray">
+            <summary>Sets the mole of <see cref="M:MathEx.Min(T:System.Decimal[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MinDoubleArray">
+            <summary>Sets the mole of <see cref="M:MathEx.Min(T:System.Double[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MinInt16Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Min(T:System.Int16[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MinInt32Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Min(T:System.Int32[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MinInt64Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Min(T:System.Int64[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MinSByteArray">
+            <summary>Sets the mole of <see cref="M:MathEx.Min(T:System.SByte[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MinSingleArray">
+            <summary>Sets the mole of <see cref="M:MathEx.Min(T:System.Single[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MinUInt16Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Min(T:System.UInt16[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MinUInt32Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Min(T:System.UInt32[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MMathEx.MinUInt64Array">
+            <summary>Sets the mole of <see cref="M:MathEx.Min(T:System.UInt64[])"/>
+            </summary>
+        </member>
+        <member name="T:Moles.MStreamUtils">
+            <summary>Mole type of <see cref="T:StreamUtils"/>
+            .</summary>
+        </member>
+        <member name="M:Moles.MStreamUtils.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Moles.MStreamUtils.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Moles.MStreamUtils.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Moles.MStreamUtils.EnumerateLinesTextReader">
+            <summary>Sets the mole of <see cref="M:StreamUtils.EnumerateLines(T:System.IO.TextReader)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MStreamUtils.GetReaderStream">
+            <summary>Sets the mole of <see cref="M:StreamUtils.GetReader(T:System.IO.Stream)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MStreamUtils.GetWriterStream">
+            <summary>Sets the mole of <see cref="M:StreamUtils.GetWriter(T:System.IO.Stream)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MStreamUtils.ReadToEndStream">
+            <summary>Sets the mole of <see cref="M:StreamUtils.ReadToEnd(T:System.IO.Stream)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MStreamUtils.WriteStreamByteArray">
+            <summary>Sets the mole of <see cref="M:StreamUtils.Write(T:System.IO.Stream,T:System.Byte[])"/>
+            </summary>
+        </member>
+        <member name="T:Moles.MStringUtils">
+            <summary>Mole type of <see cref="T:StringUtils"/>
+            .</summary>
+        </member>
+        <member name="M:Moles.MStringUtils.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Moles.MStringUtils.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:Moles.MStringUtils.FormatNamedStringT``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.String,``0,System.String})">
+            <summary>Sets the mole of <see cref="M:StringUtils.FormatNamed``1(T:System.String,``0)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MStringUtils.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Moles.MStringUtils.ContainsCiStringString">
+            <summary>Sets the mole of <see cref="M:StringUtils.ContainsCi(T:System.String,T:System.String)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MStringUtils.CountStringString">
+            <summary>Sets the mole of <see cref="M:StringUtils.Count(T:System.String,T:System.String)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MStringUtils.FormatWithStringObjectArray">
+            <summary>Sets the mole of <see cref="M:StringUtils.FormatWith(T:System.String,T:System.Object[])"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MStringUtils.GetAfterStringString">
+            <summary>Sets the mole of <see cref="M:StringUtils.GetAfter(T:System.String,T:System.String)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MStringUtils.GetBeforeStringString">
+            <summary>Sets the mole of <see cref="M:StringUtils.GetBefore(T:System.String,T:System.String)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MStringUtils.GetBetweenStringStringString">
+            <summary>Sets the mole of <see cref="M:StringUtils.GetBetween(T:System.String,T:System.String,T:System.String)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MStringUtils.IsEmptyString">
+            <summary>Sets the mole of <see cref="M:StringUtils.IsEmpty(T:System.String)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MStringUtils.IsNullOrEmptyString">
+            <summary>Sets the mole of <see cref="M:StringUtils.IsNullOrEmpty(T:System.String)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MStringUtils.IsNullOrWhiteSpaceString">
+            <summary>Sets the mole of <see cref="M:StringUtils.IsNullOrWhiteSpace(T:System.String)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MStringUtils.NormalizeSpacesString">
+            <summary>Sets the mole of <see cref="M:StringUtils.NormalizeSpaces(T:System.String)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MStringUtils.ReplaceStringInt32Char">
+            <summary>Sets the mole of <see cref="M:StringUtils.Replace(T:System.String,T:System.Int32,T:System.Char)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MStringUtils.TrimLinesString">
+            <summary>Sets the mole of <see cref="M:StringUtils.TrimLines(T:System.String)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MStringUtils._TrimLinesb__7String">
+            <summary>Sets the mole of <see cref="M:StringUtils.&lt;TrimLines&gt;b__7(T:System.String)"/>
+            </summary>
+        </member>
+        <member name="T:Moles.MXmlUtils">
+            <summary>Mole type of <see cref="T:XmlUtils"/>
+            .</summary>
+        </member>
+        <member name="M:Moles.MXmlUtils.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Moles.MXmlUtils.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Moles.MXmlUtils.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:Moles.MXmlUtils.CheckValidFileString">
+            <summary>Sets the mole of <see cref="M:XmlUtils.CheckValidFile(T:System.String)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MXmlUtils.CheckValidStream">
+            <summary>Sets the mole of <see cref="M:XmlUtils.CheckValid(T:System.IO.Stream)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MXmlUtils.CheckValidString">
+            <summary>Sets the mole of <see cref="M:XmlUtils.CheckValid(T:System.String)"/>
+            </summary>
+        </member>
+        <member name="P:Moles.MXmlUtils.CheckValidTextReader">
+            <summary>Sets the mole of <see cref="M:XmlUtils.CheckValid(T:System.IO.TextReader)"/>
+            </summary>
+        </member>
+        <member name="T:Moles.SEnumerableEx">
+            <summary>Stub type of <see cref="T:EnumerableEx"/>
+            .</summary>
+        </member>
+        <member name="M:Moles.SEnumerableEx.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Moles.SEnumerableEx.InitializeStub">
+            <summary>Initializes a new instance of type SEnumerableEx</summary>
+        </member>
+        <member name="P:Moles.SEnumerableEx.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Moles.SEnumerableEx.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+    </members>
+</doc>

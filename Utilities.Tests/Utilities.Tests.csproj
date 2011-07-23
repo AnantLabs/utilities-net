@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{524D2C15-541A-428F-84F5-978C7141A500}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Utilities.Tests</RootNamespace>
+    <AssemblyName>Utilities.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ExtendedReflection, Version=0.92.50603.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Moles.Framework, Version=0.92.50603.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Pex.Framework, Version=0.92.50603.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.Pex.Linq, Version=0.92.50603.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="Utilities.Moles, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{240E5097-8D5C-4532-9BE2-D4D0F123FB52}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="CollectionExtensionsTest.AddRange.g.cs">
+      <DependentUpon>CollectionExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CollectionExtensionsTest.AddRange01.g.cs">
+      <DependentUpon>CollectionExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CollectionExtensionsTest.cs" />
+    <Compile Include="CollectionExtensionsTest.IsValidIndex.g.cs">
+      <DependentUpon>CollectionExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonUtilsTest.CloneT.g.cs">
+      <DependentUpon>CommonUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonUtilsTest.cs" />
+    <Compile Include="CommonUtilsTest.IsNotNull.g.cs">
+      <DependentUpon>CommonUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonUtilsTest.IsNull.g.cs">
+      <DependentUpon>CommonUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonUtilsTest.IsOneOf.g.cs">
+      <DependentUpon>CommonUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonUtilsTest.Try.g.cs">
+      <DependentUpon>CommonUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonUtilsTest.TryNullReference01.g.cs">
+      <DependentUpon>CommonUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompareUtilsTest.Clamp01.g.cs">
+      <DependentUpon>CompareUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompareUtilsTest.cs" />
+    <Compile Include="CompareUtilsTest.InRange01.g.cs">
+      <DependentUpon>CompareUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompareUtilsTest.IsGreater01.g.cs">
+      <DependentUpon>CompareUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompareUtilsTest.IsGreaterOrEqual01.g.cs">
+      <DependentUpon>CompareUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompareUtilsTest.IsLess01.g.cs">
+      <DependentUpon>CompareUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompareUtilsTest.IsLessOrEqual01.g.cs">
+      <DependentUpon>CompareUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DateTimeUtilsTest.CalculateAge.g.cs">
+      <DependentUpon>DateTimeUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DateTimeUtilsTest.CalculateAge01.g.cs">
+      <DependentUpon>DateTimeUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DateTimeUtilsTest.cs" />
+    <Compile Include="DateTimeUtilsTest.DaysInMonth.g.cs">
+      <DependentUpon>DateTimeUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DateTimeUtilsTest.FromUnixTime.g.cs">
+      <DependentUpon>DateTimeUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DateTimeUtilsTest.ToUnixTime.g.cs">
+      <DependentUpon>DateTimeUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DateTimeUtilsTest.UtcOffsetGet.g.cs">
+      <DependentUpon>DateTimeUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnumerableExtensionsTest.cs" />
+    <Compile Include="EnumerableExtensionsTest.Empty.g.cs">
+      <DependentUpon>EnumerableExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnumerableExTest.cs" />
+    <Compile Include="EnumerableExTest.MakeEnumerable01.g.cs">
+      <DependentUpon>EnumerableExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factories\ActionFactory.cs" />
+    <Compile Include="Factories\FuncFactory.cs" />
+    <Compile Include="GenericCollectionExtensionsTest.AddRange01.g.cs">
+      <DependentUpon>GenericCollectionExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericCollectionExtensionsTest.cs" />
+    <Compile Include="GenericCollectionExtensionsTest.Invert.g.cs">
+      <DependentUpon>GenericCollectionExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericCollectionExtensionsTest.IsValidIndex.g.cs">
+      <DependentUpon>GenericCollectionExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericEnumerableExtensionsTest.Aggregate01.g.cs">
+      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericEnumerableExtensionsTest.Concat01.g.cs">
+      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericEnumerableExtensionsTest.cs" />
+    <Compile Include="GenericEnumerableExtensionsTest.Empty.g.cs">
+      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericEnumerableExtensionsTest.Flatten.g.cs">
+      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericEnumerableExtensionsTest.ForEach.g.cs">
+      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericEnumerableExtensionsTest.MaxItem.g.cs">
+      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericEnumerableExtensionsTest.MinItem.g.cs">
+      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericEnumerableExtensionsTest.Random.g.cs">
+      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericEnumerableExtensionsTest.SkipLast.g.cs">
+      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericEnumerableExtensionsTest.SkipUntil01.g.cs">
+      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericEnumerableExtensionsTest.TakeUntil01.g.cs">
+      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericEnumerableExtensionsTest.WhereNot01.g.cs">
+      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageUtilsTest.cs" />
+    <Compile Include="ImageUtilsTest.Download.g.cs">
+      <DependentUpon>ImageUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InternetUtilsTest.cs" />
+    <Compile Include="MathExTest.Abs.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Abs01.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Abs02.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Abs03.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Abs04.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Abs05.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Abs06.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Abs07.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Abs08.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Abs09.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Abs10.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.cs" />
+    <Compile Include="MathExTest.Gcd.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Gcd01.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Gcd02.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Gcd03.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Gcd04.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Gcd05.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Gcd06.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\PexAssemblyInfo.cs" />
+    <Compile Include="StreamUtilsTest.cs" />
+    <Compile Include="StringUtilsTest.ContainsCi.g.cs">
+      <DependentUpon>StringUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringUtilsTest.Count.g.cs">
+      <DependentUpon>StringUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringUtilsTest.cs" />
+    <Compile Include="StringUtilsTest.FormatNamed.g.cs">
+      <DependentUpon>StringUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringUtilsTest.FormatWith.g.cs">
+      <DependentUpon>StringUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringUtilsTest.GetAfter.g.cs">
+      <DependentUpon>StringUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringUtilsTest.GetBefore.g.cs">
+      <DependentUpon>StringUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringUtilsTest.GetBetween.g.cs">
+      <DependentUpon>StringUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringUtilsTest.IsEmpty.g.cs">
+      <DependentUpon>StringUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringUtilsTest.IsNullOrEmpty.g.cs">
+      <DependentUpon>StringUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringUtilsTest.IsNullOrWhiteSpace.g.cs">
+      <DependentUpon>StringUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringUtilsTest.NormalizeSpaces.g.cs">
+      <DependentUpon>StringUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringUtilsTest.Replace.g.cs">
+      <DependentUpon>StringUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringUtilsTest.TrimLines.g.cs">
+      <DependentUpon>StringUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Utilities.moles</DependentUpon>
+    </Compile>
+    <Compile Include="XmlUtilsTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Utilities.moles">
+      <Generator>MolesGenerator</Generator>
+      <LastGenOutput>Utilities.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Utilities.Moles.dll">
+      <DependentUpon>Utilities.moles</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Utilities.Moles.xml">
+      <DependentUpon>Utilities.moles</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

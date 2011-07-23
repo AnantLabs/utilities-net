@@ -29,7 +29,7 @@ public static class CommonUtils
     /// </summary>
     public static bool IsOneOf<T>(this T obj, params T[] values)
     {
-        if(values == null) return false;
+        if (values == null) return false;
         return values.Contains(obj);
     }
 
@@ -45,20 +45,10 @@ public static class CommonUtils
 
     /// <summary>
     /// If the specified function doesn't throw anything - returns its result. <para/>
-    /// If the specified function throws only NullReferenceException - returns default value of type T. <para/>
-    /// If the specified function throws any other exception - nothing is done with the exception.
-    /// </summary>
-    public static T TryNullReference<T>(this Func<T> function)
-    {
-        return TryNullReference(function, default(T));
-    }
-
-    /// <summary>
-    /// If the specified function doesn't throw anything - returns its result. <para/>
     /// If the specified function throws only NullReferenceException - returns defaultValue. <para/>
     /// If the specified function throws any other exception - nothing is done with the exception.
     /// </summary>
-    public static T TryNullReference<T>(this Func<T> function, T defaultValue)
+    public static T TryNullReference<T>(this Func<T> function, T defaultValue = default(T))
     {
         try
         {
@@ -77,10 +67,13 @@ public static class CommonUtils
     /// </summary>
     public static T Try<T>(this Func<T> function, T defaultValue, params Type[] exceptions)
     {
-        if(function == null) throw new ArgumentNullException("function");
+        if (function == null) throw new ArgumentNullException("function");
+        // check for null once
+        if (exceptions == null) exceptions = new[] { typeof(Exception) };
+        if (exceptions.Contains(null))
+            throw new ArgumentException("Exceptions list cannot contain null. To catch all exceptions specify null as the whole list.", "exceptions");
 
-        if (exceptions != null &&
-            !exceptions.All(e => e.IsAssignableFrom(typeof(Exception))))
+        if (!exceptions.All(e => e.IsAssignableFrom(typeof(Exception))))
             throw new ArgumentException("Some of specified types aren't exception types.", "exceptions");
 
         try
@@ -89,8 +82,7 @@ public static class CommonUtils
         }
         catch (Exception caughtEx)
         {
-            if (exceptions == null ||
-                exceptions.Any(ex => caughtEx.GetType().IsAssignableFrom(ex)))
+            if (exceptions.Any(ex => ex.IsAssignableFrom(caughtEx.GetType())))
             {
                 return defaultValue;
             }

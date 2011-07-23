@@ -5,7 +5,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Util
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathExPartsCreate", "MathExPartsCreate\MathExPartsCreate.csproj", "{BA06C5A5-824E-40BC-823E-F3745EBF4CB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities.Tests", "Utilities.Tests\Utilities.Tests.csproj", "{524D2C15-541A-428F-84F5-978C7141A500}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{15AB6229-DEE3-47EF-A9F9-D1D895C4612B}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		Utilities.vsmdi = Utilities.vsmdi
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Utilities.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -35,6 +47,16 @@ Global
 		{BA06C5A5-824E-40BC-823E-F3745EBF4CB4}.Release|Mixed Platforms.Build.0 = Release|x86
 		{BA06C5A5-824E-40BC-823E-F3745EBF4CB4}.Release|x86.ActiveCfg = Release|x86
 		{BA06C5A5-824E-40BC-823E-F3745EBF4CB4}.Release|x86.Build.0 = Release|x86
+		{524D2C15-541A-428F-84F5-978C7141A500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{524D2C15-541A-428F-84F5-978C7141A500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{524D2C15-541A-428F-84F5-978C7141A500}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{524D2C15-541A-428F-84F5-978C7141A500}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{524D2C15-541A-428F-84F5-978C7141A500}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{524D2C15-541A-428F-84F5-978C7141A500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{524D2C15-541A-428F-84F5-978C7141A500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{524D2C15-541A-428F-84F5-978C7141A500}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{524D2C15-541A-428F-84F5-978C7141A500}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{524D2C15-541A-428F-84F5-978C7141A500}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

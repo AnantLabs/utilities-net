@@ -22,21 +22,16 @@ public static class DateTimeUtils
     }
 
     /// <summary>
-    /// Calculates the age based on today.
+    /// Calculates the age from <paramref name="birthDate"/> until today date.
     /// </summary>
-    /// <param name="birthDate"></param>
-    /// <returns></returns>
     public static int CalculateAge(this DateTime birthDate)
     {
         return CalculateAge(birthDate, DateTime.Now);
     }
 
     /// <summary>
-    /// Calculates the age based on a passed reference date.
+    /// Calculates the age from <paramref name="birthDate"/> until <paramref name="referenceDate"/>.
     /// </summary>
-    /// <param name="birthDate"></param>
-    /// <param name="referenceDate"></param>
-    /// <returns></returns>
     public static int CalculateAge(this DateTime birthDate, DateTime referenceDate)
     {
         if (referenceDate < birthDate) throw new ArgumentException("Reference date cannot be less than birth date.");
@@ -52,10 +47,8 @@ public static class DateTimeUtils
     }
 
     /// <summary>
-    /// Returns the number of days in the month of the provided date.
+    /// Returns the number of days in the month of the <paramref name="date"/>.
     /// </summary>
-    /// <param name="date"></param>
-    /// <returns></returns>
     public static int DaysInMonth(DateTime date)
     {
         DateTime nextMonth = date.AddMonths(1);
@@ -65,9 +58,6 @@ public static class DateTimeUtils
     /// <summary>
     /// Converts this DateTime to Unix time (number of [milli]seconds from 1970.1.1).
     /// </summary>
-    /// <param name="dateTime"></param>
-    /// <param name="withMilliseconds"></param>
-    /// <returns></returns>
     public static long ToUnixTime(this DateTime dateTime, bool withMilliseconds = false)
     {
         return withMilliseconds ?
@@ -78,9 +68,6 @@ public static class DateTimeUtils
     /// <summary>
     /// Converts Unix time (number of [milli]seconds from 1970.1.1) to DateTime.
     /// </summary>
-    /// <param name="unixTime"></param>
-    /// <param name="withMilliseconds"></param>
-    /// <returns></returns>
     public static DateTime FromUnixTime(long unixTime, bool withMilliseconds = false)
     {
         var exception = new Lazy<OverflowException>(() => 

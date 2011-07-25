@@ -3,10 +3,10 @@
 /// <summary>
 /// IEnumerable-related methods.
 /// </summary>
-public class EnumerableEx
+public static class EnumerableEx
 {
     /// <summary>
-    /// Makes IEnumerable of single element.
+    /// Makes IEnumerable of the single <paramref name="item"/>.
     /// </summary>
     public static IEnumerable<TSource> MakeEnumerable<TSource>(TSource item)
     {
@@ -14,7 +14,7 @@ public class EnumerableEx
     }
 
     /// <summary>
-    /// Makes IEnumerable of specified elements.
+    /// Makes IEnumerable of specified <paramref name="items"/>.
     /// </summary>
     public static IEnumerable<TSource> MakeEnumerable<TSource>(params TSource[] items)
     {

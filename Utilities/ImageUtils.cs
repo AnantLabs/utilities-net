@@ -26,7 +26,7 @@ public static class ImageUtils
                 });
 
     /// <summary>
-    /// Converts image to grayscale and returns the resulting image. Original isn't affected.
+    /// Converts <paramref name="original"/> image to grayscale and returns the resulting image.
     /// This method uses ColorMatrix, so it's fast.
     /// </summary>
     public static Bitmap Grayscale(this Image original)
@@ -58,7 +58,7 @@ public static class ImageUtils
     }
 
     /// <summary>
-    /// Shrinks image to fit it in the rectangle maxWidth * maxHeight and returns the resulting image.  Original isn't affected.
+    /// Shrinks <paramref name="image"/> to fit it in the rectangle <paramref name="maxWidth"/> * <paramref name="maxHeight"/> and returns the resulting image.
     /// If it already fits - nothing is changed.
     /// </summary>
     public static Bitmap Shrink(this Image image, int maxWidth, int maxHeight)
@@ -90,7 +90,7 @@ public static class ImageUtils
     }
 
     /// <summary>
-    /// Scales this image to the specified width and height.
+    /// Scales this <paramref name="image"/> to the specified <paramref name="width"/> and <paramref name="height"/>.
     /// </summary>
     public static Bitmap Scale(this Image image, int width, int height)
     {
@@ -98,25 +98,25 @@ public static class ImageUtils
     }
 
     /// <summary>
-    /// Scales this image to the specified size.
+    /// Scales this <paramref name="image"/> to the specified <paramref name="size"/>.
     /// </summary>
     public static Bitmap Scale(this Image image, Size size)
     {
         if (image == null) throw new ArgumentNullException("image");
         if (size.Width <= 0 || size.Height <= 0) throw new ArgumentException("Specified size is invalid (width <= 0 or height <= 0).");
 
-        var resultBitmap = new Bitmap(size.Width, size.Height);
-        using (var g = Graphics.FromImage(resultBitmap))
+        var newBitmap = new Bitmap(size.Width, size.Height);
+        using (var g = Graphics.FromImage(newBitmap))
         {
             g.InterpolationMode = InterpolationMode.HighQualityBicubic;
             g.DrawImage(image, 0, 0, size.Width, size.Height);
 
-            return resultBitmap;
+            return newBitmap;
         }
     }
 
     /// <summary>
-    /// Gets this image in specified format as byte[].
+    /// Gets this <paramref name="image"/> in JPEG format with specified <paramref name="quality"/> as byte[].
     /// </summary>
     public static byte[] GetJpegBytes(this Image image, int quality)
     {
@@ -137,7 +137,7 @@ public static class ImageUtils
     }
 
     /// <summary>
-    /// Downloads image from the specified url and returns it as Bitmap.
+    /// Downloads image from the specified <paramref name="url"/> and returns it as Bitmap.
     /// </summary>
     public static Bitmap Download(Uri url)
     {
@@ -152,7 +152,7 @@ public static class ImageUtils
     }
 
     /// <summary>
-    /// Downloads image from the specified url and returns it as Bitmap.
+    /// Downloads image from the specified <paramref name="url"/> and returns it as Bitmap.
     /// </summary>
     public static Bitmap Download(string url)
     {

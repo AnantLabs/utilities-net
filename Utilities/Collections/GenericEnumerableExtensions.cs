@@ -8,7 +8,7 @@ using System.Text;
 public static class GenericEnumerableExtensions
 {
     /// <summary>
-    /// Tests whether the source is empty or null.
+    /// Tests whether the <paramref name="source"/> is empty or null.
     /// </summary>
     public static bool Empty<TSource>(this IEnumerable<TSource> source)
     {
@@ -16,7 +16,7 @@ public static class GenericEnumerableExtensions
     }
 
     /// <summary>
-    /// Performs the specified action on each element of the source.
+    /// Performs the specified <paramref name="action"/> on each element of the <paramref name="source"/>.
     /// </summary>
     public static void ForEach<TSource>(this IEnumerable<TSource> source, Action<TSource> action)
     {
@@ -30,7 +30,7 @@ public static class GenericEnumerableExtensions
     }
 
     /// <summary>
-    /// Bypasses elements in a sequence until a specified condition is true and then returns the remaining elements. 
+    /// Bypasses elements in the sequence until <paramref name="predicate"/> is true and then returns the remaining elements. 
     /// </summary>
     public static IEnumerable<TSource> SkipUntil<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
     {
@@ -41,8 +41,8 @@ public static class GenericEnumerableExtensions
     }
 
     /// <summary>
-    /// Bypasses elements in a sequence until a specified condition is true and then returns the remaining elements. 
-    /// The element's index is used in the logic of the predicate function.
+    /// Bypasses elements in the sequence until <paramref name="predicate"/> is true and then returns the remaining elements. 
+    /// The element's index is used in the logic of the <paramref name="predicate"/> function.
     /// </summary>
     public static IEnumerable<TSource> SkipUntil<TSource>(this IEnumerable<TSource> source, Func<TSource, int, bool> predicate)
     {
@@ -52,25 +52,22 @@ public static class GenericEnumerableExtensions
         return source.SkipWhile((t, i) => !predicate(t, i));
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public static IEnumerable<TSource> SkipLast<TSource>(this IEnumerable<TSource> source, int count = 1)
     {
         if (source == null) throw new ArgumentNullException("source");
 
+        source = source.ToList();
         int sourceCount = source.Count();
         count = CompareUtils.Clamp(count, 0, sourceCount); // 0 <= count <= sourceCount
 
-        using (var enumerator = source.GetEnumerator())
-        {
-            for (int i = 0; i < sourceCount - count; i++)
-            {
-                yield return enumerator.Current;
-                enumerator.MoveNext();
-            }
-        }
+        return source.Take(sourceCount - count);
     }
 
     /// <summary>
-    /// Returns elements from a sequence until a specified condition is true.
+    /// Returns elements from the sequence until <paramref name="predicate"/> is true.
     /// </summary>
     public static IEnumerable<TSource> TakeUntil<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
     {
@@ -81,8 +78,8 @@ public static class GenericEnumerableExtensions
     }
 
     /// <summary>
-    /// Returns elements from a sequence until a specified condition is true.
-    /// The element's index is used in the logic of the predicate function.
+    /// Returns elements from a sequence until <paramref name="predicate"/> is true.
+    /// The element's index is used in the logic of the <paramref name="predicate"/> function.
     /// </summary>
     public static IEnumerable<TSource> TakeUntil<TSource>(this IEnumerable<TSource> source, Func<TSource, int, bool> predicate)
     {
@@ -93,7 +90,7 @@ public static class GenericEnumerableExtensions
     }
 
     /// <summary>
-    /// Filters a sequence of values based on a predicate.
+    /// Filters the sequence of values based on the <paramref name="predicate"/>.
     /// </summary>
     public static IEnumerable<TSource> WhereNot<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
     {
@@ -104,8 +101,8 @@ public static class GenericEnumerableExtensions
     }
 
     /// <summary>
-    /// Filters a sequence of values based on a predicate.
-    /// The element's index is used in the logic of the predicate function.
+    /// Filters the sequence of values based on the <paramref name="predicate"/>.
+    /// The element's index is used in the logic of the <paramref name="predicate"/> function.
     /// </summary>
     public static IEnumerable<TSource> WhereNot<TSource>(this IEnumerable<TSource> source, Func<TSource, int, bool> predicate)
     {
@@ -116,7 +113,7 @@ public static class GenericEnumerableExtensions
     }
 
     /// <summary>
-    /// Appends item to the end of the IEnumerable.
+    /// Appends <paramref name="item"/> to the end of the IEnumerable.
     /// </summary>
     public static IEnumerable<TSource> Concat<TSource>(this IEnumerable<TSource> source, TSource item)
     {
@@ -131,7 +128,7 @@ public static class GenericEnumerableExtensions
     }
 
     /// <summary>
-    /// Appends items to the end of the IEnumerable.
+    /// Appends <paramref name="items"/> to the end of the IEnumerable.
     /// </summary>
     public static IEnumerable<TSource> Concat<TSource>(this IEnumerable<TSource> source, params TSource[] items)
     {
@@ -152,13 +149,13 @@ public static class GenericEnumerableExtensions
     }
 
     /// <summary>
-    /// Returns minimal item from source. Comparsion is based on specified selector.
+    /// Returns minimal item from this IEnumerable. Comparsion is performed on elements which the <paramref name="selector"/> returns.
     /// </summary>
     public static TSource MinItem<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> selector)
     {
         if (source == null) throw new ArgumentNullException("source");
         if (selector == null) throw new ArgumentNullException("selector");
-        
+
         source = source.ToList(); // to avoid multiple enumeration
         if (source.Empty()) throw new InvalidOperationException("Source is empty");
 
@@ -180,7 +177,15 @@ public static class GenericEnumerableExtensions
     }
 
     /// <summary>
-    /// Returns maximal item from source. Comparsion is based on specified selector.
+    /// Returns minimal item from this IEnumerable
+    /// </summary>
+    public static TSource MinItem<TSource, TKey>(this IEnumerable<TSource> source)
+    {
+        return MinItem(source, el => el);
+    }
+
+    /// <summary>
+    /// Returns maximal item from source.. Comparsion is performed on elements which the <paramref name="selector"/> returns.
     /// </summary>
     public static TSource MaxItem<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> selector)
     {
@@ -208,6 +213,14 @@ public static class GenericEnumerableExtensions
     }
 
     /// <summary>
+    /// Returns maximal item from this IEnumerable
+    /// </summary>
+    public static TSource MaxItem<TSource, TKey>(this IEnumerable<TSource> source)
+    {
+        return MaxItem(source, el => el);
+    }
+
+    /// <summary>
     /// Gets one random element from source. Method doesn't copy elements to array or smth like this and requires only one pass through the enumerable.
     /// </summary>
     public static TSource Random<TSource>(this IEnumerable<TSource> source)
@@ -230,13 +243,13 @@ public static class GenericEnumerableExtensions
     }
 
     /// <summary>
-    /// Concats all source elements' string representations (possibly separating them with separator string and adding prefix and suffix to each one) and return the resulting string.
+    /// Concats all source elements' string representations (possibly separating them with <paramref name="separator"/> string and using <paramref name="format"/> to format each one) and return the resulting string.
     /// </summary>
-    public static string Aggregate<TSource>(this IEnumerable<TSource> source, string separator = "", string formatString = "{0}")
+    public static string Aggregate<TSource>(this IEnumerable<TSource> source, string separator = "", string format = "{0}")
     {
         if (source == null) throw new ArgumentNullException("source");
         if (separator == null) throw new ArgumentNullException("separator");
-        if (formatString == null) throw new ArgumentNullException("formatString");
+        if (format == null) throw new ArgumentNullException("format");
 
         source = source.ToList(); // to avoid multiple enumeration
         if (source.Empty()) return String.Empty;
@@ -244,22 +257,22 @@ public static class GenericEnumerableExtensions
         string result = source.
             Aggregate(
                 new StringBuilder(),
-                (sb, el) => sb.AppendFormat(formatString, el).Append(separator),
+                (sb, el) => sb.AppendFormat(format, el).Append(separator),
                 sb => sb.ToString());
 
         return result.Substring(0, result.Length - separator.Length);
     }
 
     /// <summary>
-    /// Concats all source elements' string representations (possibly separating them with separator string and adding prefix and suffix to each one) and return the resulting string.
+    /// Concats all source elements' string representations (possibly separating them with <paramref name="separator"/> string and using <paramref name="format"/> to format each one) and return the resulting string.
     /// </summary>
-    public static string Aggregate<TSource, TDest>(this IEnumerable<TSource> source, Func<TSource, TDest> func, string separator = "", string formatString = "{0}")
+    public static string Aggregate<TSource, TDest>(this IEnumerable<TSource> source, Func<TSource, TDest> func, string separator = "", string format = "{0}")
     {
         if (source == null) throw new ArgumentNullException("source");
         if (separator == null) throw new ArgumentNullException("separator");
-        if (formatString == null) throw new ArgumentNullException("formatString");
+        if (format == null) throw new ArgumentNullException("format");
         if (func == null) throw new ArgumentNullException("func");
 
-        return Aggregate(source.Select(func), separator, formatString);
+        return Aggregate(source.Select(func), separator, format);
     }
 }

@@ -15,7 +15,7 @@ public static class StringUtils
     /// </summary>
     public static bool IsEmpty(this string s)
     {
-        return s == string.Empty;
+        return s.Length == 0;
     }
 
     /// <summary>

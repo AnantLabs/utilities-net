@@ -60,7 +60,7 @@ public static class CompareUtils
 
     #region InRange
     /// <summary>
-    /// Tests whether value &gt;= min and value &lt; max. The default comparer is used.
+    /// Tests whether <paramref name="value"/> &gt;= <paramref name="min"/> and <paramref name="value"/> &lt; <paramref name="max"/> (using default comparer).
     /// </summary>
     public static bool InRange<T>(this T value, T min, T max)
     {
@@ -68,7 +68,7 @@ public static class CompareUtils
     }
 
     /// <summary>
-    /// Tests whether value &gt;= min and value &lt; max. The specified comparer is used.
+    /// Tests whether <paramref name="value"/> &gt;= <paramref name="min"/> and <paramref name="value"/> &lt; <paramref name="max"/> (using <paramref name="comparer"/>).
     /// </summary>
     public static bool InRange<T>(this T value, T min, T max, IComparer<T> comparer)
     {
@@ -80,10 +80,12 @@ public static class CompareUtils
     #endregion
 
     #region Clamp
+
     /// <summary>
-    /// If value &lt; min returns min.<para/>
-    /// If value is between min and max returns value.<para/>
-    /// If value &gt; max returns max.
+    /// If <paramref name="value"/> &lt;= <paramref name="min"/> returns <paramref name="min"/>.<para/>
+    /// If <paramref name="value"/> &gt;= <paramref name="min"/> and <paramref name="value"/> &lt;= <paramref name="max"/> returns <paramref name="value"/>.<para/>
+    /// If <paramref name="value"/> &gt; <paramref name="max"/> returns <paramref name="max"/>.<para/>
+    /// The default comparer is used.
     /// </summary>
     public static T Clamp<T>(T value, T min, T max)
     {
@@ -91,9 +93,10 @@ public static class CompareUtils
     }
 
     /// <summary>
-    /// If value &lt; min returns min.<para/>
-    /// If value is between min and max returns value.<para/>
-    /// If value &gt; max returns max.
+    /// If <paramref name="value"/> &lt;= <paramref name="min"/> returns <paramref name="min"/>.<para/>
+    /// If <paramref name="value"/> &gt;= <paramref name="min"/> and <paramref name="value"/> &lt;= <paramref name="max"/> returns <paramref name="value"/>.<para/>
+    /// If <paramref name="value"/> &gt; <paramref name="max"/> returns <paramref name="max"/>.<para/>
+    /// The specified <paramref name="comparer"/> is used.
     /// </summary>
     public static T Clamp<T>(T value, T min, T max, IComparer<T> comparer)
     {

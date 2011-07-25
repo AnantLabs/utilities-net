@@ -6,7 +6,7 @@ using System.Collections;
 public static class EnumerableExtensions
 {
     /// <summary>
-    /// Tests whether the source is empty or null.
+    /// Tests whether the <paramref name="source"/> is empty or null.
     /// </summary>
     public static bool Empty(this IEnumerable source)
     {

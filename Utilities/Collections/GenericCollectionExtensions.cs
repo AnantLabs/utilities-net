@@ -8,7 +8,7 @@ using System.Linq;
 public static class GenericCollectionExtensions
 {
     /// <summary>
-    /// Adds the IEnumerable source elements to this collection.
+    /// Adds the IEnumerable <paramref name="source"/> elements to this <paramref name="collection"/>.
     /// </summary>
     public static void AddRange<TSource>(this ICollection<TSource> collection, IEnumerable<TSource> source)
     {
@@ -22,7 +22,7 @@ public static class GenericCollectionExtensions
     }
 
     /// <summary>
-    /// Adds specified elements to this collection.
+    /// Adds specified <paramref name="items"/> to this <paramref name="collection"/>.
     /// </summary>
     public static void AddRange<TSource>(this ICollection<TSource> collection, params TSource[] items)
     {
@@ -36,7 +36,7 @@ public static class GenericCollectionExtensions
     }
 
     /// <summary>
-    /// Tests whether the specified index is valid for the list.
+    /// Tests whether the specified <paramref name="index"/> is valid for the <paramref name="list"/>.
     /// </summary>
     public static bool IsValidIndex<TSource>(this IList<TSource> list, int index)
     {

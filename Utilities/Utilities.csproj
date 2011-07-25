@@ -29,6 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -56,26 +57,26 @@
     <Compile Include="InternetUtils.cs" />
     <Compile Include="MathEx.cs" />
     <Compile Include="MathEx.Abs.cs">
-		<DependentUpon>MathEx.cs</DependentUpon> 
-	</Compile>
+      <DependentUpon>MathEx.cs</DependentUpon>
+    </Compile>
     <Compile Include="MathEx.Gcd.cs">
-		<DependentUpon>MathEx.cs</DependentUpon> 
-	</Compile>
+      <DependentUpon>MathEx.cs</DependentUpon>
+    </Compile>
     <Compile Include="MathEx.IsPrime.cs">
-		<DependentUpon>MathEx.cs</DependentUpon> 
-	</Compile>
+      <DependentUpon>MathEx.cs</DependentUpon>
+    </Compile>
     <Compile Include="MathEx.Lcm.cs">
-		<DependentUpon>MathEx.cs</DependentUpon> 
-	</Compile>
+      <DependentUpon>MathEx.cs</DependentUpon>
+    </Compile>
     <Compile Include="MathEx.Lerp.cs">
-		<DependentUpon>MathEx.cs</DependentUpon> 
-	</Compile>
+      <DependentUpon>MathEx.cs</DependentUpon>
+    </Compile>
     <Compile Include="MathEx.Max.cs">
-		<DependentUpon>MathEx.cs</DependentUpon> 
-	</Compile>
+      <DependentUpon>MathEx.cs</DependentUpon>
+    </Compile>
     <Compile Include="MathEx.Min.cs">
-		<DependentUpon>MathEx.cs</DependentUpon> 
-	</Compile>
+      <DependentUpon>MathEx.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StreamUtils.cs" />
     <Compile Include="StringUtils.cs" />

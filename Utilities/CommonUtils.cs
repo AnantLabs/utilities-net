@@ -25,11 +25,11 @@ public static class CommonUtils
     }
 
     /// <summary>
-    /// Checks whether this object is one of the specified values.
+    /// Checks whether this object is one of the specified <paramref name="values"/>.
     /// </summary>
     public static bool IsOneOf<T>(this T obj, params T[] values)
     {
-        if (values == null) return false;
+        if (values == null) throw new ArgumentNullException("values");
         return values.Contains(obj);
     }
 
@@ -44,12 +44,14 @@ public static class CommonUtils
     }
 
     /// <summary>
-    /// If the specified function doesn't throw anything - returns its result. <para/>
-    /// If the specified function throws only NullReferenceException - returns defaultValue. <para/>
-    /// If the specified function throws any other exception - nothing is done with the exception.
+    /// If the <paramref name="function"/> doesn't throw anything - returns its result. <para/>
+    /// If the <paramref name="function"/> throws only NullReferenceException - returns <paramref name="defaultValue"/>. <para/>
+    /// If the <paramref name="function"/> throws any other exception - nothing is done with the exception.
     /// </summary>
-    public static T TryNullReference<T>(this Func<T> function, T defaultValue = default(T))
+    public static T TryNullReference<T>(Func<T> function, T defaultValue = default(T))
     {
+        if (function == null) throw new ArgumentNullException("function");
+
         try
         {
             return function();
@@ -61,9 +63,9 @@ public static class CommonUtils
     }
 
     /// <summary>
-    /// If the specified function doesn't throw anything - returns its result. <para/>
-    /// If the specified function throws only exceptions from the specified list - returns defaultValue. To catch all exceptions - specify null. <para/>
-    /// If the specified function throws any other exception - the exception is rethrown.
+    /// If the <paramref name="function"/> doesn't throw anything - returns its result. <para/>
+    /// If the <paramref name="function"/> throws only exceptions from the specified list - returns <paramref name="defaultValue"/>. To catch all exceptions specify null. <para/>
+    /// If the <paramref name="function"/> throws any other exception - the exception is rethrown.
     /// </summary>
     public static T Try<T>(this Func<T> function, T defaultValue, params Type[] exceptions)
     {

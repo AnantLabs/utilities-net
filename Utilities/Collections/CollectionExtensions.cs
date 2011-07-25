@@ -7,7 +7,7 @@ using System.Collections;
 public static class CollectionExtensions
 {
     /// <summary>
-    /// Adds the IEnumerable source elements to this list.
+    /// Adds the IEnumerable <paramref name="source"/> elements to this <paramref name="list"/>.
     /// </summary>
     public static void AddRange(this IList list, IEnumerable source)
     {
@@ -21,7 +21,7 @@ public static class CollectionExtensions
     }
 
     /// <summary>
-    /// Adds specified elements to this list.
+    /// Adds specified <paramref name="items"/> to this <paramref name="list"/>.
     /// </summary>
     public static void AddRange(this IList list, params object[] items)
     {
@@ -35,7 +35,7 @@ public static class CollectionExtensions
     }
 
     /// <summary>
-    /// Tests whether the specified index is valid for the list.
+    /// Tests whether the specified <paramref name="index"/> is valid for the <paramref name="list"/>.
     /// </summary>
     public static bool IsValidIndex(this IList list, int index)
     {

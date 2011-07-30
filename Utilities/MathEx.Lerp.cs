@@ -10,7 +10,7 @@ public static partial class MathEx
 {
 #region float
     /// <summary>
-    /// Linear interpolation: left + (right - left) * frac.
+    /// Linear interpolation: <paramref name="left"/> + (<paramref name="right"/> - <paramref name="left"/>) * <paramref name="frac"/>.
     /// </summary>
     public static float Lerp(float left, float right, float frac)
     {
@@ -20,7 +20,7 @@ public static partial class MathEx
 
 #region double
     /// <summary>
-    /// Linear interpolation: left + (right - left) * frac.
+    /// Linear interpolation: <paramref name="left"/> + (<paramref name="right"/> - <paramref name="left"/>) * <paramref name="frac"/>.
     /// </summary>
     public static double Lerp(double left, double right, double frac)
     {

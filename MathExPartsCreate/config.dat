@@ -2,18 +2,14 @@
 sbyte short int long float double decimal
 /////
     /// <summary>
-    /// Returns absolute value of parameter.
+    /// Returns absolute value of {TYPE} <paramref name="value"/>.
     /// </summary>
     public static {TYPE} Abs({TYPE} value)
     {
-        if(value >= 0) return value;
-		else if(value < 0) {
-			if(value == {TYPE}.MinValue)
-				throw new OverflowException("Can't negate minimum value of type {TYPE}.");
-			else
-				return ({TYPE})-value;
-		}
-		throw new InvalidOperationException("This shouldn't happen: !(value >= 0) && !(value < 0).");
+        checked
+        {
+            return value >= 0 ? value : ({TYPE})-value;
+        }
     }
 /////
 
@@ -21,7 +17,7 @@ Abs
 byte ushort uint ulong
 /////
     /// <summary>
-    /// Returns absolute value of parameter.
+    /// Returns absolute value of {TYPE} <paramref name="value"/>.
     /// </summary>
     public static {TYPE} Abs({TYPE} value)
     {
@@ -33,10 +29,13 @@ Min
 byte sbyte short ushort int uint long ulong float double decimal
 /////
     /// <summary>
-    /// Returns minimum of specified values.
+    /// Returns minimum of specified <paramref name="values"/>.
     /// </summary>
     public static {TYPE} Min(params {TYPE}[] values)
     {
+		if(values == null) throw new ArgumentNullException("values");
+		if(values.Empty()) throw new InvalidOperationException("Minimum of zero values isn't defined");
+		
         return values.Min();
     }
 /////
@@ -45,10 +44,13 @@ Max
 byte sbyte short ushort int uint long ulong float double decimal
 /////
     /// <summary>
-    /// Returns maximum of specified values.
+    /// Returns maximum of specified <paramref name="values"/>.
     /// </summary>
     public static {TYPE} Max(params {TYPE}[] values)
     {
+		if(values == null) throw new ArgumentNullException("values");
+		if(values.Empty()) throw new InvalidOperationException("Maximum of zero values isn't defined");
+		
         return values.Max();
     }
 /////
@@ -57,7 +59,7 @@ Lerp
 float double
 /////
     /// <summary>
-    /// Linear interpolation: left + (right - left) * frac.
+    /// Linear interpolation: <paramref name="left"/> + (<paramref name="right"/> - <paramref name="left"/>) * <paramref name="frac"/>.
     /// </summary>
     public static {TYPE} Lerp({TYPE} left, {TYPE} right, {TYPE} frac)
     {
@@ -69,7 +71,7 @@ IsPrime
 short ushort int uint long ulong
 /////
     /// <summary>
-    /// Tests whether a number is prime.
+    /// Tests whether the <paramref name="number"/> is prime.
 	/// It takes about 1 ms for numbers near int.MaxValue and some minutes for numbers near long.MaxValue on my laptop.
     /// </summary>
     public static bool IsPrime({TYPE} number)
@@ -89,10 +91,57 @@ short ushort int uint long ulong
 /////
 
 Gcd
-short ushort int uint long ulong
+short int long
 /////
     /// <summary>
-    /// Returns greatest common divisor of a and b.
+    /// Returns greatest common divisor of <paramref name="a"/> and <paramref name="b"/>.
+    /// </summary>
+    public static {TYPE} Gcd({TYPE} a, {TYPE} b)
+    {
+        if (a == 0 && b == 0) throw new InvalidOperationException("Gcd isn't defined for two zeroes.");
+		
+        if (a < 0 || b < 0) return Gcd(Abs(a), Abs(b)); // Gcd(a, b) == Gcd(|a|,|b|)
+		
+		// Gcd of 0 and another number is the absolute value of this number
+        if (a == 0) return b;		
+        if (b == 0) return a;		
+
+        while (b != 0) b = ({TYPE})(a % (a = b));
+        return a;
+    }
+
+    /// <summary>
+    /// Returns greatest common divisor of <paramref name="values"/>.
+    /// </summary>
+    public static {TYPE} Gcd(params {TYPE}[] values)
+    {
+        if (values == null) throw new ArgumentNullException("values");
+        if (values.Length == 0) throw new InvalidOperationException("Cannot calculate Gcd for 0 elements.");
+		
+		if(values.Length == 1) {
+			if(values.Single() == 0) throw new InvalidOperationException("Gcd isn't defined for single zero.");
+			else return Abs(values.Single());
+		}
+
+        return values.Aggregate(Gcd);
+    }
+
+    /// <summary>
+    /// Returns greatest common divisor of <paramref name="values"/>.
+    /// </summary>
+    public static {TYPE} Gcd(IEnumerable<{TYPE}> values)
+    {
+        if (values == null) throw new ArgumentNullException("values");
+
+        return Gcd(values.ToArray());
+    }
+/////
+
+Gcd
+ushort uint ulong
+/////
+    /// <summary>
+    /// Returns greatest common divisor of <paramref name="a"/> and <paramref name="b"/>.
     /// </summary>
     public static {TYPE} Gcd({TYPE} a, {TYPE} b)
     {
@@ -101,26 +150,29 @@ short ushort int uint long ulong
 		// Gcd of 0 and another number is the absolute value of this number
         if (a == 0) return b;		
         if (b == 0) return a;		
-		
-        if (a < 0 || b < 0) return Gcd(Abs(a), Abs(b)); // Gcd(a, b) == Gcd(|a|,|b|)
 
         while (b != 0) b = ({TYPE})(a % (a = b));
         return a;
     }
 
     /// <summary>
-    /// Returns greatest common divisor of all values.
+    /// Returns greatest common divisor of <paramref name="values"/>.
     /// </summary>
     public static {TYPE} Gcd(params {TYPE}[] values)
     {
         if (values == null) throw new ArgumentNullException("values");
         if (values.Length == 0) throw new InvalidOperationException("Cannot calculate Gcd for 0 elements.");
+		
+		if(values.Length == 1) {
+			if(values.Single() == 0) throw new InvalidOperationException("Gcd isn't defined for single zero.");
+			else return values.Single();
+		}
 
         return values.Aggregate(Gcd);
     }
 
     /// <summary>
-    /// Returns greatest common divisor of all values.
+    /// Returns greatest common divisor of <paramref name="values"/>.
     /// </summary>
     public static {TYPE} Gcd(IEnumerable<{TYPE}> values)
     {
@@ -131,29 +183,80 @@ short ushort int uint long ulong
 /////
 
 Lcm
-short ushort int uint long ulong
+short int long
 /////
     /// <summary>
-    /// Returns least common multiplier of a and b.
+    /// Returns least common multiplier of <paramref name="a"/> and <paramref name="b"/>.
     /// </summary>
     public static {TYPE} Lcm({TYPE} a, {TYPE} b)
     {
-        return ({TYPE})Abs(a / Gcd(a, b) * b);
+		if(a == 0 || b == 0) throw new InvalidOperationException("Lcm isn't defined for a == 0 or b == 0.");
+        checked
+        {
+            return ({TYPE})Abs(a / Gcd(a, b) * b);
+        }
     }
 
     /// <summary>
-    /// Returns least common multiplier of all values.
+    /// Returns least common multiplier of <paramref name="values"/>.
     /// </summary>
     public static {TYPE} Lcm(params {TYPE}[] values)
     {
         if (values == null) throw new ArgumentNullException("values");
         if (values.Length == 0) throw new InvalidOperationException("Cannot calculate Lcm for 0 elements.");
+		
+		if(values.Length == 1) {
+			if(values.Single() == 0) throw new InvalidOperationException("Lcm isn't defined for single zero.");
+			else return Abs(values.Single());
+		}
 
         return values.Aggregate(Lcm);
     }
 
     /// <summary>
-    /// Returns greatest common divisor of all values.
+    /// Returns greatest common divisor of <paramref name="values"/>.
+    /// </summary>
+    public static {TYPE} Lcm(IEnumerable<{TYPE}> values)
+    {
+        if (values == null) throw new ArgumentNullException("values");
+
+        return Gcd(values.ToArray());
+    }
+/////
+
+Lcm
+ushort uint ulong
+/////
+    /// <summary>
+    /// Returns least common multiplier of <paramref name="a"/> and <paramref name="b"/>.
+    /// </summary>
+    public static {TYPE} Lcm({TYPE} a, {TYPE} b)
+    {
+		if(a == 0 || b == 0) throw new InvalidOperationException("Lcm isn't defined for a == 0 or b == 0.");
+        checked
+        {
+            return ({TYPE})(a / Gcd(a, b) * b);
+        }
+    }
+
+    /// <summary>
+    /// Returns least common multiplier of <paramref name="values"/>.
+    /// </summary>
+    public static {TYPE} Lcm(params {TYPE}[] values)
+    {
+        if (values == null) throw new ArgumentNullException("values");
+        if (values.Length == 0) throw new InvalidOperationException("Cannot calculate Lcm for 0 elements.");
+		
+		if(values.Length == 1) {
+			if(values.Single() == 0) throw new InvalidOperationException("Lcm isn't defined for single zero.");
+			else return values.Single();
+		}
+
+        return values.Aggregate(Lcm);
+    }
+
+    /// <summary>
+    /// Returns greatest common divisor of <paramref name="values"/>.
     /// </summary>
     public static {TYPE} Lcm(IEnumerable<{TYPE}> values)
     {

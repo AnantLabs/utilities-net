@@ -10,126 +10,98 @@ public static partial class MathEx
 {
 #region sbyte
     /// <summary>
-    /// Returns absolute value of parameter.
+    /// Returns absolute value of sbyte <paramref name="value"/>.
     /// </summary>
     public static sbyte Abs(sbyte value)
     {
-        if(value >= 0) return value;
-		else if(value < 0) {
-			if(value == sbyte.MinValue)
-				throw new OverflowException("Can't negate minimum value of type sbyte.");
-			else
-				return (sbyte)-value;
-		}
-		throw new InvalidOperationException("This shouldn't happen: !(value >= 0) && !(value < 0).");
+        checked
+        {
+            return value >= 0 ? value : (sbyte)-value;
+        }
     }
 #endregion
 
 #region short
     /// <summary>
-    /// Returns absolute value of parameter.
+    /// Returns absolute value of short <paramref name="value"/>.
     /// </summary>
     public static short Abs(short value)
     {
-        if(value >= 0) return value;
-		else if(value < 0) {
-			if(value == short.MinValue)
-				throw new OverflowException("Can't negate minimum value of type short.");
-			else
-				return (short)-value;
-		}
-		throw new InvalidOperationException("This shouldn't happen: !(value >= 0) && !(value < 0).");
+        checked
+        {
+            return value >= 0 ? value : (short)-value;
+        }
     }
 #endregion
 
 #region int
     /// <summary>
-    /// Returns absolute value of parameter.
+    /// Returns absolute value of int <paramref name="value"/>.
     /// </summary>
     public static int Abs(int value)
     {
-        if(value >= 0) return value;
-		else if(value < 0) {
-			if(value == int.MinValue)
-				throw new OverflowException("Can't negate minimum value of type int.");
-			else
-				return (int)-value;
-		}
-		throw new InvalidOperationException("This shouldn't happen: !(value >= 0) && !(value < 0).");
+        checked
+        {
+            return value >= 0 ? value : (int)-value;
+        }
     }
 #endregion
 
 #region long
     /// <summary>
-    /// Returns absolute value of parameter.
+    /// Returns absolute value of long <paramref name="value"/>.
     /// </summary>
     public static long Abs(long value)
     {
-        if(value >= 0) return value;
-		else if(value < 0) {
-			if(value == long.MinValue)
-				throw new OverflowException("Can't negate minimum value of type long.");
-			else
-				return (long)-value;
-		}
-		throw new InvalidOperationException("This shouldn't happen: !(value >= 0) && !(value < 0).");
+        checked
+        {
+            return value >= 0 ? value : (long)-value;
+        }
     }
 #endregion
 
 #region float
     /// <summary>
-    /// Returns absolute value of parameter.
+    /// Returns absolute value of float <paramref name="value"/>.
     /// </summary>
     public static float Abs(float value)
     {
-        if(value >= 0) return value;
-		else if(value < 0) {
-			if(value == float.MinValue)
-				throw new OverflowException("Can't negate minimum value of type float.");
-			else
-				return (float)-value;
-		}
-		throw new InvalidOperationException("This shouldn't happen: !(value >= 0) && !(value < 0).");
+        checked
+        {
+            return value >= 0 ? value : (float)-value;
+        }
     }
 #endregion
 
 #region double
     /// <summary>
-    /// Returns absolute value of parameter.
+    /// Returns absolute value of double <paramref name="value"/>.
     /// </summary>
     public static double Abs(double value)
     {
-        if(value >= 0) return value;
-		else if(value < 0) {
-			if(value == double.MinValue)
-				throw new OverflowException("Can't negate minimum value of type double.");
-			else
-				return (double)-value;
-		}
-		throw new InvalidOperationException("This shouldn't happen: !(value >= 0) && !(value < 0).");
+        checked
+        {
+            return value >= 0 ? value : (double)-value;
+        }
     }
 #endregion
 
 #region decimal
     /// <summary>
-    /// Returns absolute value of parameter.
+    /// Returns absolute value of decimal <paramref name="value"/>.
     /// </summary>
     public static decimal Abs(decimal value)
     {
-        if(value >= 0) return value;
-		else if(value < 0) {
-			if(value == decimal.MinValue)
-				throw new OverflowException("Can't negate minimum value of type decimal.");
-			else
-				return (decimal)-value;
-		}
-		throw new InvalidOperationException("This shouldn't happen: !(value >= 0) && !(value < 0).");
+        checked
+        {
+            return value >= 0 ? value : (decimal)-value;
+        }
     }
 #endregion
 
 #region byte
     /// <summary>
-    /// Returns absolute value of parameter.
+    /// Returns absolute value of byte <paramref name="value"/>.
     /// </summary>
     public static byte Abs(byte value)
     {
@@ -139,7 +111,7 @@ public static partial class MathEx
 
 #region ushort
     /// <summary>
-    /// Returns absolute value of parameter.
+    /// Returns absolute value of ushort <paramref name="value"/>.
     /// </summary>
     public static ushort Abs(ushort value)
     {
@@ -149,7 +121,7 @@ public static partial class MathEx
 
 #region uint
     /// <summary>
-    /// Returns absolute value of parameter.
+    /// Returns absolute value of uint <paramref name="value"/>.
     /// </summary>
     public static uint Abs(uint value)
     {
@@ -159,7 +131,7 @@ public static partial class MathEx
 
 #region ulong
     /// <summary>
-    /// Returns absolute value of parameter.
+    /// Returns absolute value of ulong <paramref name="value"/>.
     /// </summary>
     public static ulong Abs(ulong value)
     {

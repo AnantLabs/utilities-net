@@ -36,12 +36,28 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.ExtendedReflection, Version=0.92.50603.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Moles.Framework, Version=0.92.50603.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Pex.Framework, Version=0.92.50603.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="FsCheck">
+      <HintPath>..\..\fscheck\bins\FsCheck.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Pex.Linq, Version=0.92.50603.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="FSharp.Core">
+      <HintPath>..\..\fscheck\bins\FSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ExtendedReflection, Version=0.94.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Common Files\microsoft shared\ExtendedReflection\0.94.51023.0\bin\Microsoft.ExtendedReflection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Moles.Framework, Version=0.94.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft Moles\PublicAssemblies\Microsoft.Moles.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Pex.Framework, Version=0.94.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft Moles\PublicAssemblies\Microsoft.Pex.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Pex.Linq, Version=0.94.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft Pex\PublicAssemblies\Microsoft.Pex.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
@@ -195,9 +211,6 @@
       <DependentUpon>ImageUtilsTest.cs</DependentUpon>
     </Compile>
     <Compile Include="InternetUtilsTest.cs" />
-    <Compile Include="MathExTest.Abs.g.cs">
-      <DependentUpon>MathExTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="MathExTest.Abs01.g.cs">
       <DependentUpon>MathExTest.cs</DependentUpon>
     </Compile>
@@ -210,28 +223,7 @@
     <Compile Include="MathExTest.Abs04.g.cs">
       <DependentUpon>MathExTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="MathExTest.Abs05.g.cs">
-      <DependentUpon>MathExTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MathExTest.Abs06.g.cs">
-      <DependentUpon>MathExTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MathExTest.Abs07.g.cs">
-      <DependentUpon>MathExTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MathExTest.Abs08.g.cs">
-      <DependentUpon>MathExTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MathExTest.Abs09.g.cs">
-      <DependentUpon>MathExTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MathExTest.Abs10.g.cs">
-      <DependentUpon>MathExTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="MathExTest.cs" />
-    <Compile Include="MathExTest.Gcd.g.cs">
-      <DependentUpon>MathExTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="MathExTest.Gcd01.g.cs">
       <DependentUpon>MathExTest.cs</DependentUpon>
     </Compile>
@@ -248,6 +240,51 @@
       <DependentUpon>MathExTest.cs</DependentUpon>
     </Compile>
     <Compile Include="MathExTest.Gcd06.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.IsPrime01.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.IsPrime02.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Lcm01.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Lcm02.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Lcm03.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Lcm04.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Lcm05.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Lcm06.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Lerp.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Max01.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Max02.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Max03.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Min01.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Min02.g.cs">
+      <DependentUpon>MathExTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathExTest.Min03.g.cs">
       <DependentUpon>MathExTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

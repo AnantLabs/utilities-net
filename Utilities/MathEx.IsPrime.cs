@@ -10,7 +10,7 @@ public static partial class MathEx
 {
 #region short
     /// <summary>
-    /// Tests whether a number is prime.
+    /// Tests whether the <paramref name="number"/> is prime.
 	/// It takes about 1 ms for numbers near int.MaxValue and some minutes for numbers near long.MaxValue on my laptop.
     /// </summary>
     public static bool IsPrime(short number)
@@ -31,7 +31,7 @@ public static partial class MathEx
 
 #region ushort
     /// <summary>
-    /// Tests whether a number is prime.
+    /// Tests whether the <paramref name="number"/> is prime.
 	/// It takes about 1 ms for numbers near int.MaxValue and some minutes for numbers near long.MaxValue on my laptop.
     /// </summary>
     public static bool IsPrime(ushort number)
@@ -52,7 +52,7 @@ public static partial class MathEx
 
 #region int
     /// <summary>
-    /// Tests whether a number is prime.
+    /// Tests whether the <paramref name="number"/> is prime.
 	/// It takes about 1 ms for numbers near int.MaxValue and some minutes for numbers near long.MaxValue on my laptop.
     /// </summary>
     public static bool IsPrime(int number)
@@ -73,7 +73,7 @@ public static partial class MathEx
 
 #region uint
     /// <summary>
-    /// Tests whether a number is prime.
+    /// Tests whether the <paramref name="number"/> is prime.
 	/// It takes about 1 ms for numbers near int.MaxValue and some minutes for numbers near long.MaxValue on my laptop.
     /// </summary>
     public static bool IsPrime(uint number)
@@ -94,7 +94,7 @@ public static partial class MathEx
 
 #region long
     /// <summary>
-    /// Tests whether a number is prime.
+    /// Tests whether the <paramref name="number"/> is prime.
 	/// It takes about 1 ms for numbers near int.MaxValue and some minutes for numbers near long.MaxValue on my laptop.
     /// </summary>
     public static bool IsPrime(long number)
@@ -115,7 +115,7 @@ public static partial class MathEx
 
 #region ulong
     /// <summary>
-    /// Tests whether a number is prime.
+    /// Tests whether the <paramref name="number"/> is prime.
 	/// It takes about 1 ms for numbers near int.MaxValue and some minutes for numbers near long.MaxValue on my laptop.
     /// </summary>
     public static bool IsPrime(ulong number)

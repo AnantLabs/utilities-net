@@ -53,7 +53,7 @@ public static class GenericEnumerableExtensions
     }
 
     /// <summary>
-    /// 
+    /// Returns elements from the sequence without last <paramref name="count"/> ones.
     /// </summary>
     public static IEnumerable<TSource> SkipLast<TSource>(this IEnumerable<TSource> source, int count = 1)
     {

@@ -44,14 +44,16 @@ public static partial class MathEx
                 var part = new Part();
                 part.Name = configData[i++];
                 part.Types = configData[i++].Split(' ');
-                Debug.Assert(configData[i++] == "/////");
+                Debug.Assert(configData[i] == "/////");
+                i++;
                 part.Content = configData.Skip(i).TakeWhile(s => s != "/////").Aggregate((acc, s) =>
                     {
                         i++;
                         return acc + "\r\n" + s;
                     });
                 i++;
-                Debug.Assert(configData[i++] == "/////");
+                Debug.Assert(configData[i] == "/////");
+                i++;
 
                 parts.Add(part);
             }

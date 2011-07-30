@@ -4,6 +4,7 @@ bin/Debug
 MathExPartsCreate/bin
 TestResults
 Utilities.Tests/bin
+Utilities/bin/Release/reports
 syntax: regexp
 _ReSharper
 ReSharper

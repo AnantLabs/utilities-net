@@ -60,9 +60,10 @@ public static class DateTimeUtils
     /// </summary>
     public static long ToUnixTime(this DateTime dateTime, bool withMilliseconds = false)
     {
-        return withMilliseconds ?
-            (long)(dateTime - UnixStartDate).TotalMilliseconds :
-            (long)(dateTime - UnixStartDate).TotalSeconds;
+        double value = withMilliseconds ?
+            (dateTime - UnixStartDate).TotalMilliseconds :
+            (dateTime - UnixStartDate).TotalSeconds;
+        return (long)Math.Floor(value);
     }
 
     /// <summary>
@@ -70,13 +71,12 @@ public static class DateTimeUtils
     /// </summary>
     public static DateTime FromUnixTime(long unixTime, bool withMilliseconds = false)
     {
-        var exception = new Lazy<OverflowException>(() => 
+        var exception = new Lazy<OverflowException>(() =>
             new OverflowException("Specified unix time represents too long time period."));
 
         try
         {
-            return UnixStartDate
-                   + (withMilliseconds ? TimeSpan.FromMilliseconds(unixTime) : TimeSpan.FromSeconds(unixTime));
+            return withMilliseconds ? UnixStartDate.AddMilliseconds(unixTime) : UnixStartDate.AddSeconds(unixTime);
         }
         catch (OverflowException)
         {

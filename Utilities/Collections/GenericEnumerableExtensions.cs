@@ -16,6 +16,15 @@ public static class GenericEnumerableExtensions
     }
 
     /// <summary>
+    /// Returns number of <paramref name="element"/> occurences in <paramref name="source"/>.
+    /// </summary>
+    public static int Count<TSource>(this IEnumerable<TSource> source, TSource element)
+    {
+        if (source == null) throw new ArgumentNullException("source");
+        return source.Count(el => Equals(el, element));
+    }
+
+    /// <summary>
     /// Performs the specified <paramref name="action"/> on each element of the <paramref name="source"/>.
     /// </summary>
     public static void ForEach<TSource>(this IEnumerable<TSource> source, Action<TSource> action)

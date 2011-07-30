@@ -191,8 +191,7 @@ public static class StringUtils
     }
 
     /// <summary>
-    /// Returns number of <paramref name="value"/>'s occurences in this string.
-    /// <para/>TODO: I think this is wrong
+    /// Returns number of <paramref name="value"/>'s occurences in this string. Overlapping occurences are not counted.
     /// </summary>
     public static int Count(this string s, string value)
     {
@@ -205,6 +204,7 @@ public static class StringUtils
         while ((ind = s.IndexOf(value, ind)) != -1)
         {
             cnt++;
+            ind += value.Length;
         }
         return cnt;
     }

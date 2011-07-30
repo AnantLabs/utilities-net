@@ -130,23 +130,11 @@
     <Compile Include="CompareUtilsTest.IsLessOrEqual01.g.cs">
       <DependentUpon>CompareUtilsTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="DateTimeUtilsTest.CalculateAge.g.cs">
-      <DependentUpon>DateTimeUtilsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DateTimeUtilsTest.CalculateAge01.g.cs">
-      <DependentUpon>DateTimeUtilsTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="DateTimeUtilsTest.cs" />
-    <Compile Include="DateTimeUtilsTest.DaysInMonth.g.cs">
-      <DependentUpon>DateTimeUtilsTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="DateTimeUtilsTest.FromUnixTime.g.cs">
       <DependentUpon>DateTimeUtilsTest.cs</DependentUpon>
     </Compile>
     <Compile Include="DateTimeUtilsTest.ToUnixTime.g.cs">
-      <DependentUpon>DateTimeUtilsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DateTimeUtilsTest.UtcOffsetGet.g.cs">
       <DependentUpon>DateTimeUtilsTest.cs</DependentUpon>
     </Compile>
     <Compile Include="EnumerableExtensionsTest.cs" />
@@ -175,6 +163,9 @@
     <Compile Include="GenericEnumerableExtensionsTest.Concat01.g.cs">
       <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="GenericEnumerableExtensionsTest.Count.g.cs">
+      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="GenericEnumerableExtensionsTest.cs" />
     <Compile Include="GenericEnumerableExtensionsTest.Empty.g.cs">
       <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
@@ -185,10 +176,10 @@
     <Compile Include="GenericEnumerableExtensionsTest.ForEach.g.cs">
       <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="GenericEnumerableExtensionsTest.MaxItem.g.cs">
+    <Compile Include="GenericEnumerableExtensionsTest.MaxItem01.g.cs">
       <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="GenericEnumerableExtensionsTest.MinItem.g.cs">
+    <Compile Include="GenericEnumerableExtensionsTest.MinItem01.g.cs">
       <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
     </Compile>
     <Compile Include="GenericEnumerableExtensionsTest.Random.g.cs">
@@ -334,6 +325,9 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Utilities.moles</DependentUpon>
+    </Compile>
+    <Compile Include="XmlUtilsTest.CheckValid.g.cs">
+      <DependentUpon>XmlUtilsTest.cs</DependentUpon>
     </Compile>
     <Compile Include="XmlUtilsTest.cs" />
   </ItemGroup>

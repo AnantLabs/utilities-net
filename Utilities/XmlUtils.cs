@@ -3,7 +3,7 @@ using System.IO;
 using System.Xml;
 
 /// <summary>
-/// TODO: Update summary.
+/// Utility XML-related methods.
 /// </summary>
 public static class XmlUtils
 {

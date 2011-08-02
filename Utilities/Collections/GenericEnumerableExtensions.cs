@@ -12,7 +12,7 @@ public static class GenericEnumerableExtensions
     /// </summary>
     public static bool Empty<TSource>(this IEnumerable<TSource> source)
     {
-        return source.IsNull() || !source.Any();
+        return source == null || !source.Any();
     }
 
     /// <summary>

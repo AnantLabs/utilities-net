@@ -10,6 +10,6 @@ public static class EnumerableExtensions
     /// </summary>
     public static bool Empty(this IEnumerable source)
     {
-        return source.IsNull() || !source.GetEnumerator().MoveNext();
+        return source == null || !source.GetEnumerator().MoveNext();
     }
 }

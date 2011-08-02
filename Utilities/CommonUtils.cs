@@ -7,24 +7,6 @@ using System.Linq;
 public static class CommonUtils
 {
     /// <summary>
-    /// Tests whether this object is null.
-    /// </summary>
-    public static bool IsNull<T>(this T arg)
-        where T : class
-    {
-        return arg == null;
-    }
-
-    /// <summary>
-    /// Tests whether this object is not null.
-    /// </summary>
-    public static bool IsNotNull<T>(this T arg)
-        where T : class
-    {
-        return arg != null;
-    }
-
-    /// <summary>
     /// Checks whether this object is one of the specified <paramref name="values"/>.
     /// </summary>
     public static bool IsOneOf<T>(this T obj, params T[] values)

@@ -15,6 +15,7 @@ public static class StringUtils
     /// </summary>
     public static bool IsEmpty(this string s)
     {
+        if (s == null) throw new ArgumentNullException("s");
         return s.Length == 0;
     }
 
@@ -67,7 +68,7 @@ public static class StringUtils
                 // each 2 brackets are replaced with one in the output, so only remainder matters
                 if ((openCount % 2) != (closeCount % 2))
                 {
-                    throw new ArgumentException("Unbalanced braces in format string.", "format");
+                    throw new FormatException("Unbalanced braces in format string.");
                 }
 
                 // create prefix and suffix of the match replacement
@@ -97,7 +98,7 @@ public static class StringUtils
                 var prop = type.GetProperty(fieldName);
                 if (prop == null)
                 {
-                    throw new ArgumentException("Object arg hasn't public field/property which is specified in the format string.", "arg");
+                    throw new FormatException("Format string contains format item which doesn't exist in the provided object.");
                 }
 
                 object value = prop.GetValue(arg, null);

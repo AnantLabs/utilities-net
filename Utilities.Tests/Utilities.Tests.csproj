@@ -96,12 +96,6 @@
       <DependentUpon>CommonUtilsTest.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonUtilsTest.cs" />
-    <Compile Include="CommonUtilsTest.IsNotNull.g.cs">
-      <DependentUpon>CommonUtilsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CommonUtilsTest.IsNull.g.cs">
-      <DependentUpon>CommonUtilsTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="CommonUtilsTest.IsOneOf.g.cs">
       <DependentUpon>CommonUtilsTest.cs</DependentUpon>
     </Compile>
@@ -197,11 +191,6 @@
     <Compile Include="GenericEnumerableExtensionsTest.WhereNot01.g.cs">
       <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImageUtilsTest.cs" />
-    <Compile Include="ImageUtilsTest.Download.g.cs">
-      <DependentUpon>ImageUtilsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InternetUtilsTest.cs" />
     <Compile Include="MathExTest.Abs01.g.cs">
       <DependentUpon>MathExTest.cs</DependentUpon>
     </Compile>
@@ -280,7 +269,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\PexAssemblyInfo.cs" />
-    <Compile Include="StreamUtilsTest.cs" />
     <Compile Include="StringUtilsTest.ContainsCi.g.cs">
       <DependentUpon>StringUtilsTest.cs</DependentUpon>
     </Compile>
@@ -326,10 +314,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Utilities.moles</DependentUpon>
     </Compile>
-    <Compile Include="XmlUtilsTest.CheckValid.g.cs">
-      <DependentUpon>XmlUtilsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="XmlUtilsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Utilities.moles">

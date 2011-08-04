@@ -68,18 +68,20 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Ude">
+      <HintPath>..\Libs\Ude.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CastingUtils.cs" />
-    <Compile Include="Collections\CollectionExtensions.cs" />
     <Compile Include="Collections\EnumerableEx.cs" />
+    <Compile Include="Collections\CollectionExtensions.cs" />
     <Compile Include="Collections\EnumerableExtensions.cs" />
-    <Compile Include="Collections\GenericCollectionExtensions.cs" />
-    <Compile Include="Collections\GenericEnumerableExtensions.cs" />
     <Compile Include="CommonUtils.cs" />
     <Compile Include="CompareUtils.cs" />
     <Compile Include="DateTimeUtils.cs" />
+    <Compile Include="EncodingUtils.cs" />
     <Compile Include="ImageUtils.cs" />
     <Compile Include="InternetUtils.cs" />
     <Compile Include="MathEx.cs" />

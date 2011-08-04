@@ -80,7 +80,6 @@ public void NormalizeSpaces236()
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-[Ignore]
 [PexDescription("the test state was: duplicate path")]
 public void NormalizeSpaces827()
 {

@@ -82,13 +82,15 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Compile Include="CollectionExtensionsTest.AddRange.g.cs">
-      <DependentUpon>CollectionExtensionsTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="CollectionExtensionsTest.AddRange01.g.cs">
       <DependentUpon>CollectionExtensionsTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="CollectionExtensionsTest.cs" />
+    <Compile Include="CollectionExtensionsTest.AddRanges.g.cs">
+      <DependentUpon>CollectionExtensionsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CollectionExtensionsTest.Invert.g.cs">
+      <DependentUpon>CollectionExtensionsTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="CollectionExtensionsTest.IsValidIndex.g.cs">
       <DependentUpon>CollectionExtensionsTest.cs</DependentUpon>
     </Compile>
@@ -105,92 +107,22 @@
     <Compile Include="CommonUtilsTest.TryNullReference01.g.cs">
       <DependentUpon>CommonUtilsTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="CompareUtilsTest.Clamp01.g.cs">
-      <DependentUpon>CompareUtilsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CompareUtilsTest.cs" />
-    <Compile Include="CompareUtilsTest.InRange01.g.cs">
-      <DependentUpon>CompareUtilsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CompareUtilsTest.IsGreater01.g.cs">
-      <DependentUpon>CompareUtilsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CompareUtilsTest.IsGreaterOrEqual01.g.cs">
-      <DependentUpon>CompareUtilsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CompareUtilsTest.IsLess01.g.cs">
-      <DependentUpon>CompareUtilsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CompareUtilsTest.IsLessOrEqual01.g.cs">
-      <DependentUpon>CompareUtilsTest.cs</DependentUpon>
+    <Compile Include="DateTimeUtilsTest.CalculateAge01.g.cs">
+      <DependentUpon>DateTimeUtilsTest.cs</DependentUpon>
     </Compile>
     <Compile Include="DateTimeUtilsTest.cs" />
+    <Compile Include="DateTimeUtilsTest.DaysInMonth.g.cs">
+      <DependentUpon>DateTimeUtilsTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="DateTimeUtilsTest.FromUnixTime.g.cs">
       <DependentUpon>DateTimeUtilsTest.cs</DependentUpon>
     </Compile>
     <Compile Include="DateTimeUtilsTest.ToUnixTime.g.cs">
       <DependentUpon>DateTimeUtilsTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="EnumerableExtensionsTest.cs" />
-    <Compile Include="EnumerableExtensionsTest.Empty.g.cs">
-      <DependentUpon>EnumerableExtensionsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EnumerableExTest.cs" />
-    <Compile Include="EnumerableExTest.MakeEnumerable01.g.cs">
-      <DependentUpon>EnumerableExTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Factories\ActionFactory.cs" />
     <Compile Include="Factories\FuncFactory.cs" />
-    <Compile Include="GenericCollectionExtensionsTest.AddRange01.g.cs">
-      <DependentUpon>GenericCollectionExtensionsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GenericCollectionExtensionsTest.cs" />
-    <Compile Include="GenericCollectionExtensionsTest.Invert.g.cs">
-      <DependentUpon>GenericCollectionExtensionsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GenericCollectionExtensionsTest.IsValidIndex.g.cs">
-      <DependentUpon>GenericCollectionExtensionsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GenericEnumerableExtensionsTest.Aggregate01.g.cs">
-      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GenericEnumerableExtensionsTest.Concat01.g.cs">
-      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GenericEnumerableExtensionsTest.Count.g.cs">
-      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GenericEnumerableExtensionsTest.cs" />
-    <Compile Include="GenericEnumerableExtensionsTest.Empty.g.cs">
-      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GenericEnumerableExtensionsTest.Flatten.g.cs">
-      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GenericEnumerableExtensionsTest.ForEach.g.cs">
-      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GenericEnumerableExtensionsTest.MaxItem01.g.cs">
-      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GenericEnumerableExtensionsTest.MinItem01.g.cs">
-      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GenericEnumerableExtensionsTest.Random.g.cs">
-      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GenericEnumerableExtensionsTest.SkipLast.g.cs">
-      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GenericEnumerableExtensionsTest.SkipUntil01.g.cs">
-      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GenericEnumerableExtensionsTest.TakeUntil01.g.cs">
-      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GenericEnumerableExtensionsTest.WhereNot01.g.cs">
-      <DependentUpon>GenericEnumerableExtensionsTest.cs</DependentUpon>
-    </Compile>
+    <Compile Include="CollectionExtensionsTest.cs" />
     <Compile Include="MathExTest.Abs01.g.cs">
       <DependentUpon>MathExTest.cs</DependentUpon>
     </Compile>

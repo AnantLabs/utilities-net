@@ -60,22 +60,22 @@ public static class CompareUtils
 
     #region InRange
     /// <summary>
-    /// Tests whether <paramref name="value"/> &gt;= <paramref name="min"/> and <paramref name="value"/> &lt; <paramref name="max"/> (using default comparer).
+    /// Tests whether <paramref name="value"/> &gt;= <paramref name="minInclusive"/> and <paramref name="value"/> &lt; <paramref name="maxExclusive"/> (using default comparer).
     /// </summary>
-    public static bool InRange<T>(this T value, T min, T max)
+    public static bool InRange<T>(this T value, T minInclusive, T maxExclusive)
     {
-        return InRange(value, min, max, Comparer<T>.Default);
+        return InRange(value, minInclusive, maxExclusive, Comparer<T>.Default);
     }
 
     /// <summary>
-    /// Tests whether <paramref name="value"/> &gt;= <paramref name="min"/> and <paramref name="value"/> &lt; <paramref name="max"/> (using <paramref name="comparer"/>).
+    /// Tests whether <paramref name="value"/> &gt;= <paramref name="minInclusive"/> and <paramref name="value"/> &lt; <paramref name="maxExclusive"/> (using <paramref name="comparer"/>).
     /// </summary>
-    public static bool InRange<T>(this T value, T min, T max, IComparer<T> comparer)
+    public static bool InRange<T>(this T value, T minInclusive, T maxExclusive, IComparer<T> comparer)
     {
         if (comparer == null) comparer = Comparer<T>.Default;
-        if (min.IsGreater(max, comparer)) throw new ArgumentException("Min is greater than max.");
+        if (minInclusive.IsGreater(maxExclusive, comparer)) throw new ArgumentException("Min is greater than max.");
 
-        return value.IsGreaterOrEqual(min, comparer) && value.IsLess(max, comparer);
+        return value.IsGreaterOrEqual(minInclusive, comparer) && value.IsLess(maxExclusive, comparer);
     }
     #endregion
 

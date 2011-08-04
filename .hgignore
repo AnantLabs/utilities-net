@@ -5,6 +5,7 @@ MathExPartsCreate/bin
 TestResults
 Utilities.Tests/bin
 Utilities/bin/Release/reports
+*.dotCover
 syntax: regexp
 _ReSharper
 ReSharper

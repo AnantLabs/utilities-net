@@ -55,16 +55,8 @@
             <summary>Sets the mole of <see cref="M:CommonUtils.IsOneOf``1(``0,``0[])"/>
             </summary>
         </member>
-        <member name="M:Moles.MCommonUtils.TryFuncOfTTTypeArray``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Func{``0},``0,System.Type[],``0})">
-            <summary>Sets the mole of <see cref="M:CommonUtils.Try``1(System.Func`1{``0},``0,T:System.Type[])"/>
-            </summary>
-        </member>
-        <member name="M:Moles.MCommonUtils.TryNullReferenceFuncOfTT``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Func{``0},``0,``0})">
-            <summary>Sets the mole of <see cref="M:CommonUtils.TryNullReference``1(System.Func`1{``0},``0)"/>
-            </summary>
-        </member>
-        <member name="M:Moles.MCommonUtils._Tryb__0Type``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Type,System.Boolean})">
-            <summary>Sets the mole of <see cref="M:CommonUtils.&lt;Try&gt;b__0``1(T:System.Type)"/>
+        <member name="M:Moles.MCommonUtils.NullSafeFuncOfTT``1(Microsoft.Moles.Framework.MolesDelegates.Func{System.Func{``0},``0,``0})">
+            <summary>Sets the mole of <see cref="M:CommonUtils.NullSafe``1(System.Func`1{``0},``0)"/>
             </summary>
         </member>
         <member name="P:Moles.MCommonUtils.Behavior">

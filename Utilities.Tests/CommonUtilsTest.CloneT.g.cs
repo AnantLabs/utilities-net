@@ -17,18 +17,18 @@ public partial class CommonUtilsTest
 {
 [TestMethod]
 [PexGeneratedBy(typeof(global::CommonUtilsTest))]
-[ExpectedException(typeof(ArgumentNullException))]
-public void CloneTThrowsArgumentNullException754()
-{
-    ICloneable iCloneable;
-    iCloneable = this.CloneT<ICloneable>((ICloneable)null);
-}
-[TestMethod]
-[PexGeneratedBy(typeof(global::CommonUtilsTest))]
-public void CloneT188()
+public void CloneT18801()
 {
     ICloneable iCloneable;
     object box = (object)(default(AssemblyHash));
     iCloneable = this.CloneT<ICloneable>((ICloneable)box);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(global::CommonUtilsTest))]
+[ExpectedException(typeof(ArgumentNullException))]
+public void CloneTThrowsArgumentNullException342()
+{
+    ICloneable iCloneable;
+    iCloneable = this.CloneT<ICloneable>((ICloneable)null);
 }
 }

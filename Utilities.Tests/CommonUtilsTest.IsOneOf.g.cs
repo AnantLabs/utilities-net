@@ -16,15 +16,7 @@ public partial class CommonUtilsTest
 {
 [TestMethod]
 [PexGeneratedBy(typeof(global::CommonUtilsTest))]
-[ExpectedException(typeof(ArgumentNullException))]
-public void IsOneOfThrowsArgumentNullException936()
-{
-    bool b;
-    b = this.IsOneOf<int>(0, (int[])null);
-}
-[TestMethod]
-[PexGeneratedBy(typeof(global::CommonUtilsTest))]
-public void IsOneOf474()
+public void IsOneOf47401()
 {
     bool b;
     int[] ints = new int[0];
@@ -33,11 +25,19 @@ public void IsOneOf474()
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::CommonUtilsTest))]
-public void IsOneOf205()
+public void IsOneOf20501()
 {
     bool b;
     int[] ints = new int[1];
     b = this.IsOneOf<int>(0, ints);
     Assert.AreEqual<bool>(true, b);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(global::CommonUtilsTest))]
+[ExpectedException(typeof(ArgumentNullException))]
+public void IsOneOfThrowsArgumentNullException930()
+{
+    bool b;
+    b = this.IsOneOf<int>(0, (int[])null);
 }
 }

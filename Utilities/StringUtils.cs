@@ -140,7 +140,7 @@ public static class StringUtils
         if (x == null) throw new ArgumentNullException("x");
 
         var index = s.IndexOf(x);
-        if (index == -1) throw new InvalidOperationException("This string doesn't contain specified x string.");
+        if (index == -1) return s;
 
         return s.Substring(0, index);
     }
@@ -176,7 +176,7 @@ public static class StringUtils
         if (x == null) throw new ArgumentNullException("x");
 
         var index = s.IndexOf(x);
-        if (index == -1) throw new InvalidOperationException("This string doesn't contain specified x string.");
+        if (index == -1) return "";
 
         var startIndex = index + x.Length;
         return s.Substring(startIndex);

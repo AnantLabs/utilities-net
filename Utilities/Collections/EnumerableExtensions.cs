@@ -273,7 +273,7 @@ public static class EnumerableExtensions
     }
 
     /// <summary>
-    /// Concats all source elements' string representations (possibly separating them with <paramref name="separator"/> string and using <paramref name="format"/> to format each one) and return the resulting string.
+    /// Concats all <paramref name="source"/> elements' string representations (possibly separating them with <paramref name="separator"/> string and using <paramref name="format"/> to format each one) and return the resulting string.
     /// </summary>
     public static string Aggregate<TSource, TDest>(this IEnumerable<TSource> source, Func<TSource, TDest> func, string separator = "", string format = "{0}")
     {
@@ -283,5 +283,19 @@ public static class EnumerableExtensions
         if (func == null) throw new ArgumentNullException("func");
 
         return Aggregate(source.Select(func), separator, format);
+    }
+
+    /// <summary>
+    /// Returns index of the first element in <paramref name="source"/> for which <paramref name="predicate"/> function returns true.
+    /// </summary>
+    public static int IndexOf<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
+    {
+        int i = 0;
+        foreach (var item in source)
+        {
+            if (predicate(item)) return i;
+            i++;
+        }
+        return -1;
     }
 }

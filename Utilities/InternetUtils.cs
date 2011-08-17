@@ -1,7 +1,10 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Text;
+using System.Web;
 
 /// <summary>
 /// Common Internet-related utility methods.
@@ -41,11 +44,46 @@ public static class InternetUtils
     /// <summary>
     /// Fetches content from the <paramref name="url"/> as a string.
     /// </summary>
-    public static string Fetch(Uri url)
+    /// <param name="url">URL of the request</param>
+    /// <param name="postData">Object containing data to be sent (as key => value). If not null, then POST method is used and the data is sent.</param>
+    /// <param name="headers">Object containing additional headers (as key => value).</param>
+    public static string Fetch(Uri url, object postData = null, object headers = null)
     {
         if (url == null) throw new ArgumentNullException("url");
 
         var request = (HttpWebRequest)WebRequest.Create(url);
+
+        if (headers != null)
+        {
+            var values = headers.GetType().GetMembers().
+                Where(m => m.MemberType == MemberTypes.Field || m.MemberType == MemberTypes.Property).
+                ToDictionary(m => m.Name, m => ((PropertyInfo)m).GetValue(headers, null).ToString());
+
+            values.ForEach(header => request.Headers.Add(header.Key, header.Value));
+        }
+
+        if (postData != null)
+        {
+            var values = postData.GetType().GetMembers().
+                Where(m => m.MemberType == MemberTypes.Field || m.MemberType == MemberTypes.Property).
+                ToDictionary(m => m.Name, m => ((PropertyInfo)m).GetValue(postData, null).ToString());
+            string post = values.Aggregate(
+                kvp => "{0}={1}".FormatWith(
+                    kvp.Key,
+                    kvp.Value),
+                "&");
+            byte[] bytes = new ASCIIEncoding().GetBytes(post);
+
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.ContentLength = bytes.Length;
+
+            using (var stream = request.GetRequestStream())
+            {
+                stream.Write(bytes, 0, bytes.Length);
+            }
+        }
+
         using (var response = request.GetResponse())
         using (var responseStream = response.GetResponseStream())
         using (var reader = new StreamReader(responseStream))
@@ -57,9 +95,12 @@ public static class InternetUtils
     /// <summary>
     /// Fetches content from the <paramref name="url"/> as a string.
     /// </summary>
-    public static string Fetch(string url)
+    /// <param name="url">URL of the request</param>
+    /// <param name="postData">Object containing data to be sent (as key => value). If not null, then POST method is used and the data is sent.</param>
+    /// <param name="headers">Object containing additional headers (as key => value).</param>
+    public static string Fetch(string url, object postData = null, object headers = null)
     {
         if (url == null) throw new ArgumentNullException("url");
-        return Fetch(new Uri(url));
+        return Fetch(new Uri(url), postData, headers);
     }
 }

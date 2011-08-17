@@ -8,15 +8,25 @@ using System.Text;
 /// </summary>
 public static class Base64
 {
-    public static string Encode(string str)
+    /// <summary>
+    /// Encode the <paramref name="s"/> string to Base64.
+    /// </summary>
+    public static string Encode(string s)
     {
-        byte[] encbuff = System.Text.Encoding.UTF8.GetBytes(str);
+        if (s == null) throw new ArgumentNullException("s");
+
+        byte[] encbuff = Encoding.UTF8.GetBytes(s);
         return Convert.ToBase64String(encbuff);
     }
 
-    public static string Decode(string str)
+    /// <summary>
+    /// Decode the Base64-encoded string <paramref name="s"/>.
+    /// </summary>
+    public static string Decode(string s)
     {
-        byte[] decbuff = Convert.FromBase64String(str);
-        return System.Text.Encoding.UTF8.GetString(decbuff);
+        if (s == null) throw new ArgumentNullException("s");
+
+        byte[] decbuff = Convert.FromBase64String(s);
+        return Encoding.UTF8.GetString(decbuff);
     }
 }

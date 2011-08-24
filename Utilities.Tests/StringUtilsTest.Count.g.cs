@@ -17,7 +17,7 @@ public partial class StringUtilsTest
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [ExpectedException(typeof(ArgumentNullException))]
-public void CountThrowsArgumentNullException221()
+public void CountThrowsArgumentNullException407()
 {
     int i;
     i = this.Count((string)null, (string)null);
@@ -25,7 +25,7 @@ public void CountThrowsArgumentNullException221()
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [ExpectedException(typeof(ArgumentNullException))]
-public void CountThrowsArgumentNullException996()
+public void CountThrowsArgumentNullException62()
 {
     int i;
     i = this.Count((string)null, "");
@@ -33,7 +33,7 @@ public void CountThrowsArgumentNullException996()
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [ExpectedException(typeof(ArgumentNullException))]
-public void CountThrowsArgumentNullException989()
+public void CountThrowsArgumentNullException2()
 {
     int i;
     i = this.Count((string)null, "0");
@@ -41,7 +41,7 @@ public void CountThrowsArgumentNullException989()
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [ExpectedException(typeof(ArgumentNullException))]
-public void CountThrowsArgumentNullException637()
+public void CountThrowsArgumentNullException796()
 {
     int i;
     i = this.Count("", (string)null);
@@ -49,7 +49,7 @@ public void CountThrowsArgumentNullException637()
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [ExpectedException(typeof(ArgumentNullException))]
-public void CountThrowsArgumentNullException145()
+public void CountThrowsArgumentNullException584()
 {
     int i;
     i = this.Count("0", (string)null);
@@ -57,7 +57,7 @@ public void CountThrowsArgumentNullException145()
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [ExpectedException(typeof(ArgumentException))]
-public void CountThrowsArgumentException755()
+public void CountThrowsArgumentException336()
 {
     int i;
     i = this.Count("", "");
@@ -81,7 +81,7 @@ public void Count720()
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [ExpectedException(typeof(ArgumentNullException))]
-public void CountThrowsArgumentNullException138()
+public void CountThrowsArgumentNullException482()
 {
     int i;
     i = this.Count("00", (string)null);
@@ -93,14 +93,6 @@ public void Count361()
     int i;
     i = this.Count("0", "00");
     Assert.AreEqual<int>(0, i);
-}
-[TestMethod]
-[PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void Count937()
-{
-    int i;
-    i = this.Count("00", "00");
-    Assert.AreEqual<int>(1, i);
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]

@@ -17,7 +17,7 @@ public partial class StringUtilsTest
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [ExpectedException(typeof(ArgumentNullException))]
-public void GetAfterThrowsArgumentNullException830()
+public void GetAfterThrowsArgumentNullException536()
 {
     string s;
     s = this.GetAfter((string)null, (string)null);
@@ -25,7 +25,7 @@ public void GetAfterThrowsArgumentNullException830()
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [ExpectedException(typeof(ArgumentNullException))]
-public void GetAfterThrowsArgumentNullException278()
+public void GetAfterThrowsArgumentNullException412()
 {
     string s;
     s = this.GetAfter("", (string)null);
@@ -40,19 +40,11 @@ public void GetAfter574()
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-[PexRaisedException(typeof(InvalidOperationException))]
-public void GetAfterThrowsInvalidOperationException754()
+public void GetAfter337()
 {
     string s;
     s = this.GetAfter("", "\0\0");
-}
-[TestMethod]
-[PexGeneratedBy(typeof(global::StringUtilsTest))]
-[PexRaisedException(typeof(InvalidOperationException))]
-public void GetAfterThrowsInvalidOperationException242()
-{
-    string s;
-    s = this.GetAfter("", "\0");
+    Assert.AreEqual<string>("", s);
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]

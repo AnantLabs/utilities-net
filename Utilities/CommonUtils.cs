@@ -16,16 +16,6 @@ public static class CommonUtils
     }
 
     /// <summary>
-    /// Clones this object the same way as Clone(), but returns result as type T instead of object.
-    /// </summary>
-    public static T CloneT<T>(this T t)
-        where T : ICloneable
-    {
-        if (t == null) throw new ArgumentNullException("t");
-        return (T)t.Clone();
-    }
-
-    /// <summary>
     /// If the <paramref name="function"/> doesn't throw anything - returns its result. <para/>
     /// If the <paramref name="function"/> throws only NullReferenceException - returns <paramref name="defaultValue"/>. <para/>
     /// If the <paramref name="function"/> throws any other exception - nothing is done with the exception.
@@ -39,6 +29,24 @@ public static class CommonUtils
             return function();
         }
         catch (NullReferenceException)
+        {
+            return defaultValue;
+        }
+    }
+
+    /// <summary>
+    /// If the <paramref name="function"/> doesn't throw anything - returns its result. <para/>
+    /// If the <paramref name="function"/> throws any exception - returns <paramref name="defaultValue"/>. <para/>
+    /// </summary>
+    public static T Safe<T>(Func<T> function, T defaultValue = default(T))
+    {
+        if (function == null) throw new ArgumentNullException("function");
+
+        try
+        {
+            return function();
+        }
+        catch
         {
             return defaultValue;
         }

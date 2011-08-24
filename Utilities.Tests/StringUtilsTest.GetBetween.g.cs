@@ -16,31 +16,39 @@ public partial class StringUtilsTest
 {
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-[ExpectedException(typeof(ArgumentNullException))]
-public void GetBetweenThrowsArgumentNullException471()
+[PexRaisedException(typeof(InvalidOperationException))]
+public void GetBetweenThrowsInvalidOperationException819()
 {
     string s;
-    s = this.GetBetween((string)null, (string)null, (string)null);
+    s = this.GetBetween("", "\0", "");
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-[ExpectedException(typeof(ArgumentNullException))]
-public void GetBetweenThrowsArgumentNullException27()
+[PexRaisedException(typeof(InvalidOperationException))]
+public void GetBetweenThrowsInvalidOperationException411()
 {
     string s;
-    s = this.GetBetween("", (string)null, (string)null);
+    s = this.GetBetween("\u0001\0", "\u0001", "\u4000");
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-[ExpectedException(typeof(ArgumentNullException))]
-public void GetBetweenThrowsArgumentNullException344()
+[PexRaisedException(typeof(ArgumentOutOfRangeException))]
+public void GetBetweenThrowsArgumentOutOfRangeException579()
 {
     string s;
-    s = this.GetBetween("", "", (string)null);
+    s = this.GetBetween("", "\0", "\0");
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void GetBetween141()
+public void GetBetween40701()
+{
+    string s;
+    s = this.GetBetween("", "\0\0", "");
+    Assert.AreEqual<string>("", s);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(global::StringUtilsTest))]
+public void GetBetween14101()
 {
     string s;
     s = this.GetBetween("", "", "");
@@ -48,34 +56,42 @@ public void GetBetween141()
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-[PexRaisedException(typeof(InvalidOperationException))]
-public void GetBetweenThrowsInvalidOperationException63()
+public void GetBetween31901()
 {
     string s;
-    s = this.GetBetween("", "\0\0", "\0\0");
+    s = this.GetBetween("", "\0\0\0", "\0\0");
+    Assert.AreEqual<string>("", s);
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-[PexRaisedException(typeof(InvalidOperationException))]
-public void GetBetweenThrowsInvalidOperationException490()
-{
-    string s;
-    s = this.GetBetween("", "\0", "\0");
-}
-[TestMethod]
-[PexGeneratedBy(typeof(global::StringUtilsTest))]
-[PexRaisedException(typeof(InvalidOperationException))]
-public void GetBetweenThrowsInvalidOperationException944()
+public void GetBetween58001()
 {
     string s;
     s = this.GetBetween("\0", "\0", "\0");
+    Assert.AreEqual<string>("", s);
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-[PexRaisedException(typeof(InvalidOperationException))]
-public void GetBetweenThrowsInvalidOperationException174()
+[ExpectedException(typeof(ArgumentNullException))]
+public void GetBetweenThrowsArgumentNullException712()
 {
     string s;
-    s = this.GetBetween("@\0\u0800", "\0", "\0");
+    s = this.GetBetween((string)null, (string)null, (string)null);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(global::StringUtilsTest))]
+[ExpectedException(typeof(ArgumentNullException))]
+public void GetBetweenThrowsArgumentNullException743()
+{
+    string s;
+    s = this.GetBetween("", "", (string)null);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(global::StringUtilsTest))]
+[ExpectedException(typeof(ArgumentNullException))]
+public void GetBetweenThrowsArgumentNullException849()
+{
+    string s;
+    s = this.GetBetween("", (string)null, (string)null);
 }
 }

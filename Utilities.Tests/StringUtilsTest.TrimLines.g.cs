@@ -17,7 +17,7 @@ public partial class StringUtilsTest
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [ExpectedException(typeof(ArgumentNullException))]
-public void TrimLinesThrowsArgumentNullException891()
+public void TrimLinesThrowsArgumentNullException149()
 {
     string s;
     s = this.TrimLines((string)null);

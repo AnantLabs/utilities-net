@@ -22,12 +22,4 @@ public void IsNullOrEmpty848()
     b = this.IsNullOrEmpty((string)null);
     Assert.AreEqual<bool>(true, b);
 }
-[TestMethod]
-[PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void IsNullOrEmpty682()
-{
-    bool b;
-    b = this.IsNullOrEmpty("\0");
-    Assert.AreEqual<bool>(false, b);
-}
 }

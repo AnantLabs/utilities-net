@@ -16,7 +16,7 @@ public partial class CommonUtilsTest
 {
 [TestMethod]
 [PexGeneratedBy(typeof(global::CommonUtilsTest))]
-public void IsOneOf47401()
+public void IsOneOf474()
 {
     bool b;
     int[] ints = new int[0];
@@ -35,7 +35,7 @@ public void IsOneOf20501()
 [TestMethod]
 [PexGeneratedBy(typeof(global::CommonUtilsTest))]
 [ExpectedException(typeof(ArgumentNullException))]
-public void IsOneOfThrowsArgumentNullException930()
+public void IsOneOfThrowsArgumentNullException827()
 {
     bool b;
     b = this.IsOneOf<int>(0, (int[])null);

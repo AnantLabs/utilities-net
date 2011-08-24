@@ -17,61 +17,67 @@ public partial class StringUtilsTest
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [ExpectedException(typeof(ArgumentNullException))]
-public void NormalizeSpacesThrowsArgumentNullException917()
+public void ToSentenceCaseThrowsArgumentNullException815()
 {
     string s;
-    s = this.NormalizeSpaces((string)null);
+    s = this.ToSentenceCase((string)null);
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void NormalizeSpaces578()
+public void ToSentenceCase578()
 {
     string s;
-    s = this.NormalizeSpaces("");
+    s = this.ToSentenceCase("");
     Assert.AreEqual<string>("", s);
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void NormalizeSpaces56()
+public void ToSentenceCase913()
 {
     string s;
-    s = this.NormalizeSpaces(" ");
-    Assert.AreEqual<string>(" ", s);
+    s = this.ToSentenceCase("a");
+    Assert.AreEqual<string>("A", s);
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void NormalizeSpaces850()
+[Ignore]
+[PexDescription("the test state was: duplicate path")]
+public void ToSentenceCase91301()
 {
     string s;
-    s = this.NormalizeSpaces("Q");
-    Assert.AreEqual<string>("Q", s);
+    s = this.ToSentenceCase("a");
+    Assert.AreEqual<string>("A", s);
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void NormalizeSpaces378()
+public void ToSentenceCase201()
 {
     string s;
-    s = this.NormalizeSpaces("11");
-    Assert.AreEqual<string>("11", s);
+    s = this.ToSentenceCase("aa");
+    Assert.AreEqual<string>("Aa", s);
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void NormalizeSpaces236()
+public void ToSentenceCase308()
 {
     string s;
-    s = this.NormalizeSpaces("111111111111111111111   ");
-    Assert.AreEqual<string>("111111111111111111111 ", s);
+    s = this.ToSentenceCase("aA");
+    Assert.AreEqual<string>("A a", s);
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void NormalizeSpaces160()
+public void ToSentenceCase855()
 {
     string s;
-    s = this.NormalizeSpaces(
-                            "1111111111111111111111111111111\u0131\u8031\u8031\u8031\u8031\u8031\u8031\u8031\u8031\u8031\u8031\u8031\u8031\u8031\u8031\u8031\u80311"
-                            );
-    Assert.AreEqual<string>
-        ("1111111111111111111111111111111\u0131\u8031\u8031\u8031\u8031\u8031\u8031\u8031\u8031\u8031\u8031\u8031\u8031\u8031\u8031\u8031\u80311", 
-         s);
+    s = this.ToSentenceCase("aAa");
+    Assert.AreEqual<string>("A aa", s);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(global::StringUtilsTest))]
+public void ToSentenceCase485()
+{
+    string s;
+    s = this.ToSentenceCase("aaaaaAaAaaaa");
+    Assert.AreEqual<string>("Aaaaa aa aaaaa", s);
 }
 }

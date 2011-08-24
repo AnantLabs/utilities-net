@@ -58,7 +58,7 @@ public void FormatNamed93()
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [PexRaisedException(typeof(PexAssertFailedException))]
-public void FormatNamedThrowsPexAssertFailedException537()
+public void FormatNamedThrowsPexAssertFailedException151()
 {
     using (IPexObserveContext observer = PexObserve.NewTest())
     {
@@ -110,62 +110,6 @@ public void FormatNamed917()
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-[PexRaisedException(typeof(PexAssertFailedException))]
-public void FormatNamedThrowsPexAssertFailedException25()
-{
-    using (IPexObserveContext observer = PexObserve.NewTest())
-    {
-      global::StringUtilsTest.FormatNamed("}", "\0");
-      string ovformatNamed = observer.GetObservedValue<string>("formatNamed");
-      Assert.AreEqual<string>("}{a}\0", ovformatNamed);
-      string ovformat = observer.GetObservedValue<string>("format");
-      Assert.AreEqual<string>("}{0}\0", ovformat);
-    }
-}
-[TestMethod]
-[PexGeneratedBy(typeof(global::StringUtilsTest))]
-[PexRaisedException(typeof(PexAssertFailedException))]
-public void FormatNamedThrowsPexAssertFailedException839()
-{
-    using (IPexObserveContext observer = PexObserve.NewTest())
-    {
-      global::StringUtilsTest.FormatNamed("}}", (string)null);
-      string ovformatNamed = observer.GetObservedValue<string>("formatNamed");
-      Assert.AreEqual<string>("}}{a}", ovformatNamed);
-      string ovformat = observer.GetObservedValue<string>("format");
-      Assert.AreEqual<string>("}}{0}", ovformat);
-    }
-}
-[TestMethod]
-[PexGeneratedBy(typeof(global::StringUtilsTest))]
-[PexRaisedException(typeof(PexAssertFailedException))]
-public void FormatNamedThrowsPexAssertFailedException668()
-{
-    using (IPexObserveContext observer = PexObserve.NewTest())
-    {
-      global::StringUtilsTest.FormatNamed("}}", "}}");
-      string ovformatNamed = observer.GetObservedValue<string>("formatNamed");
-      Assert.AreEqual<string>("}}{a}}}", ovformatNamed);
-      string ovformat = observer.GetObservedValue<string>("format");
-      Assert.AreEqual<string>("}}{0}}}", ovformat);
-    }
-}
-[TestMethod]
-[PexGeneratedBy(typeof(global::StringUtilsTest))]
-[PexRaisedException(typeof(PexAssertFailedException))]
-public void FormatNamedThrowsPexAssertFailedException252()
-{
-    using (IPexObserveContext observer = PexObserve.NewTest())
-    {
-      global::StringUtilsTest.FormatNamed("}{", "}{");
-      string ovformatNamed = observer.GetObservedValue<string>("formatNamed");
-      Assert.AreEqual<string>("}{{a}}{", ovformatNamed);
-      string ovformat = observer.GetObservedValue<string>("format");
-      Assert.AreEqual<string>("}{{0}}{", ovformat);
-    }
-}
-[TestMethod]
-[PexGeneratedBy(typeof(global::StringUtilsTest))]
 public void FormatNamed72()
 {
     using (IPexObserveContext observer = PexObserve.NewTest())
@@ -192,34 +136,49 @@ public void FormatNamed2()
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void FormatNamed557()
+[PexRaisedException(typeof(PexAssertFailedException))]
+public void FormatNamedThrowsPexAssertFailedException492()
 {
     using (IPexObserveContext observer = PexObserve.NewTest())
     {
-      global::StringUtilsTest.FormatNamed("{\0{", (string)null);
+      global::StringUtilsTest.FormatNamed("{}", (string)null);
       string ovformatNamed = observer.GetObservedValue<string>("formatNamed");
-      Assert.AreEqual<string>("{\0{{a}", ovformatNamed);
+      Assert.AreEqual<string>("{}{a}", ovformatNamed);
       string ovformat = observer.GetObservedValue<string>("format");
-      Assert.AreEqual<string>("{\0{{0}", ovformat);
+      Assert.AreEqual<string>("{}{0}", ovformat);
     }
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void FormatNamed466()
+public void FormatNamed955()
 {
     using (IPexObserveContext observer = PexObserve.NewTest())
     {
-      global::StringUtilsTest.FormatNamed("{\0{", "{\0{");
+      global::StringUtilsTest.FormatNamed("{:", (string)null);
       string ovformatNamed = observer.GetObservedValue<string>("formatNamed");
-      Assert.AreEqual<string>("{\0{{a}{\0{", ovformatNamed);
+      Assert.AreEqual<string>("{:{a}", ovformatNamed);
       string ovformat = observer.GetObservedValue<string>("format");
-      Assert.AreEqual<string>("{\0{{0}{\0{", ovformat);
+      Assert.AreEqual<string>("{:{0}", ovformat);
     }
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [PexRaisedException(typeof(PexAssertFailedException))]
-public void FormatNamedThrowsPexAssertFailedException71()
+public void FormatNamedThrowsPexAssertFailedException244()
+{
+    using (IPexObserveContext observer = PexObserve.NewTest())
+    {
+      global::StringUtilsTest.FormatNamed("{", "}");
+      string ovformatNamed = observer.GetObservedValue<string>("formatNamed");
+      Assert.AreEqual<string>("{{a}}", ovformatNamed);
+      string ovformat = observer.GetObservedValue<string>("format");
+      Assert.AreEqual<string>("{{0}}", ovformat);
+    }
+}
+[TestMethod]
+[PexGeneratedBy(typeof(global::StringUtilsTest))]
+[PexRaisedException(typeof(PexAssertFailedException))]
+public void FormatNamedThrowsPexAssertFailedException341()
 {
     using (IPexObserveContext observer = PexObserve.NewTest())
     {
@@ -232,21 +191,22 @@ public void FormatNamedThrowsPexAssertFailedException71()
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void FormatNamed61()
+[PexRaisedException(typeof(PexAssertFailedException))]
+public void FormatNamedThrowsPexAssertFailedException847()
 {
     using (IPexObserveContext observer = PexObserve.NewTest())
     {
-      global::StringUtilsTest.FormatNamed("{:{", (string)null);
+      global::StringUtilsTest.FormatNamed("{}", "{\0");
       string ovformatNamed = observer.GetObservedValue<string>("formatNamed");
-      Assert.AreEqual<string>("{:{{a}", ovformatNamed);
+      Assert.AreEqual<string>("{}{a}{\0", ovformatNamed);
       string ovformat = observer.GetObservedValue<string>("format");
-      Assert.AreEqual<string>("{:{{0}", ovformat);
+      Assert.AreEqual<string>("{}{0}{\0", ovformat);
     }
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [PexRaisedException(typeof(PexAssertFailedException))]
-public void FormatNamedThrowsPexAssertFailedException859()
+public void FormatNamedThrowsPexAssertFailedException355()
 {
     using (IPexObserveContext observer = PexObserve.NewTest())
     {
@@ -255,45 +215,6 @@ public void FormatNamedThrowsPexAssertFailedException859()
       Assert.AreEqual<string>("{}{a}{{", ovformatNamed);
       string ovformat = observer.GetObservedValue<string>("format");
       Assert.AreEqual<string>("{}{0}{{", ovformat);
-    }
-}
-[TestMethod]
-[PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void FormatNamed574()
-{
-    using (IPexObserveContext observer = PexObserve.NewTest())
-    {
-      global::StringUtilsTest.FormatNamed("{\0:", "{\0\0");
-      string ovformatNamed = observer.GetObservedValue<string>("formatNamed");
-      Assert.AreEqual<string>("{\0:{a}{\0\0", ovformatNamed);
-      string ovformat = observer.GetObservedValue<string>("format");
-      Assert.AreEqual<string>("{\0:{0}{\0\0", ovformat);
-    }
-}
-[TestMethod]
-[PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void FormatNamed768()
-{
-    using (IPexObserveContext observer = PexObserve.NewTest())
-    {
-      global::StringUtilsTest.FormatNamed((string)null, "{\0}");
-      string ovformatNamed = observer.GetObservedValue<string>("formatNamed");
-      Assert.AreEqual<string>("{a}{\0}", ovformatNamed);
-      string ovformat = observer.GetObservedValue<string>("format");
-      Assert.AreEqual<string>("{0}{\0}", ovformat);
-    }
-}
-[TestMethod]
-[PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void FormatNamed145()
-{
-    using (IPexObserveContext observer = PexObserve.NewTest())
-    {
-      global::StringUtilsTest.FormatNamed("{\0{{", (string)null);
-      string ovformatNamed = observer.GetObservedValue<string>("formatNamed");
-      Assert.AreEqual<string>("{\0{{{a}", ovformatNamed);
-      string ovformat = observer.GetObservedValue<string>("format");
-      Assert.AreEqual<string>("{\0{{{0}", ovformat);
     }
 }
 }

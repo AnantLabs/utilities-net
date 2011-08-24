@@ -87,4 +87,40 @@ public static class DateTimeUtils
             throw exception.Value;
         }
     }
+
+    /// <summary>
+    /// Returns friendly relative representation of <paramref name="dateTime"/> (e.g. "yesterday, about 7 hours ago").
+    /// Now only english representation supported.
+    /// For future dates "somewhere in the future" string is returned.
+    /// </summary>
+    /// <param name="dateTime">UTC DateTime</param>
+    /// <param name="timeZone">TimeZoneInfo which is used to convert specified dateTime and DateTime.UtcNow</param>
+    public static string ToFriendlyRelative(this DateTime dateTime, TimeZoneInfo timeZone)
+    {
+        dateTime = TimeZoneInfo.ConvertTimeFromUtc(dateTime, timeZone);
+        var now = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, timeZone);
+
+        if (dateTime > now) return "somewhere in the future";
+
+        var timeSpan = now - dateTime;
+
+        if (timeSpan < TimeSpan.FromSeconds(30)) return "just now";
+
+        string result = "";
+        if (timeSpan < TimeSpan.FromMinutes(1.5)) result = ", about a minute ago";
+        else if (timeSpan < TimeSpan.FromMinutes(50)) result = ", about " + (timeSpan.Minutes + 0.5).To<int>() + " minutes ago";
+        else if (timeSpan < TimeSpan.FromHours(1.5)) result = ", about an hour ago";
+        else if (timeSpan < TimeSpan.FromHours(24)) result = ", about " + (timeSpan.Hours + 0.5).To<int>() + " hours ago";
+
+        int days = (now.Date - dateTime.Date).TotalDays.To<int>();
+
+        if (days == 0) return "today" + result;
+        if (days == 1) return "yesterday" + result;
+
+        if (days <= 7) return "about " + days + " days ago";
+        if (days <= 7 * 4) return "about " + days / 7 + " weeks ago";
+
+        if (days <= 365) return "about " + days / 30 + " months ago";
+        return "about " + days / 365 + " years ago";
+    }
 }

@@ -17,7 +17,7 @@ public partial class StringUtilsTest
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [ExpectedException(typeof(ArgumentNullException))]
-public void IsEmptyThrowsArgumentNullException191()
+public void IsEmptyThrowsArgumentNullException59()
 {
     bool b;
     b = this.IsEmpty((string)null);
@@ -29,13 +29,5 @@ public void IsEmpty548()
     bool b;
     b = this.IsEmpty("");
     Assert.AreEqual<bool>(true, b);
-}
-[TestMethod]
-[PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void IsEmpty682()
-{
-    bool b;
-    b = this.IsEmpty("\0");
-    Assert.AreEqual<bool>(false, b);
 }
 }

@@ -17,7 +17,7 @@ public partial class StringUtilsTest
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [ExpectedException(typeof(ArgumentNullException))]
-public void ReplaceThrowsArgumentNullException196()
+public void ReplaceThrowsArgumentNullException910()
 {
     string s;
     s = this.Replace((string)null, 0, ' ');
@@ -25,7 +25,7 @@ public void ReplaceThrowsArgumentNullException196()
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [ExpectedException(typeof(ArgumentOutOfRangeException))]
-public void ReplaceThrowsArgumentOutOfRangeException248()
+public void ReplaceThrowsArgumentOutOfRangeException()
 {
     string s;
     s = this.Replace("", 0, ' ');
@@ -40,24 +40,8 @@ public void Replace725()
 }
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void Replace457()
-{
-    string s;
-    s = this.Replace("\t", 0, ' ');
-    Assert.AreEqual<string>(" ", s);
-}
-[TestMethod]
-[PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void Replace495()
-{
-    string s;
-    s = this.Replace("\u0100", 0, '\u0100');
-    Assert.AreEqual<string>("\u0100", s);
-}
-[TestMethod]
-[PexGeneratedBy(typeof(global::StringUtilsTest))]
 [ExpectedException(typeof(ArgumentOutOfRangeException))]
-public void ReplaceThrowsArgumentOutOfRangeException507()
+public void ReplaceThrowsArgumentOutOfRangeException729()
 {
     string s;
     s = this.Replace("", 1, ' ');
@@ -65,7 +49,7 @@ public void ReplaceThrowsArgumentOutOfRangeException507()
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [ExpectedException(typeof(ArgumentOutOfRangeException))]
-public void ReplaceThrowsArgumentOutOfRangeException419()
+public void ReplaceThrowsArgumentOutOfRangeException951()
 {
     string s;
     s = this.Replace("", int.MinValue, ' ');

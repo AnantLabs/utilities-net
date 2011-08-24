@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 
 /// <summary>
@@ -156,13 +157,13 @@ public static class StringUtils
 
         int leftIndex = s.IndexOf(left);
         int startIndex = leftIndex + left.Length;
-        if (leftIndex == -1)
-            throw new InvalidOperationException("This string doesn't contain specified left string.");
+        if (leftIndex == -1) startIndex = 0;
 
         int rightIndex = s.IndexOf(right, startIndex);
         int endIndex = rightIndex;
-        if (rightIndex == -1)
-            throw new InvalidOperationException("This string doesn't contain specified right string after the first occurrence of specified left string.");
+        if (rightIndex == -1) endIndex = s.Length - 1;
+
+        if(endIndex < startIndex) return string.Empty;
 
         return s.Substring(startIndex, endIndex - startIndex);
     }
@@ -219,5 +220,16 @@ public static class StringUtils
         if (!index.InRange(0, s.Length)) throw new ArgumentOutOfRangeException("index");
 
         return s.Substring(0, index) + ch + s.Substring(index + 1);
+    }
+
+    /// <summary>
+    /// Changes CamelCase to Sentence Case.
+    /// </summary>
+    public static string ToSentenceCase(this string s)
+    {
+        if (s == null) throw new ArgumentNullException("s");
+        s = Regex.Replace(s, "[a-z][A-Z]", m => m.Value[0] + " " + char.ToLower(m.Value[1]));
+        if (s.Length > 0) s = s.Replace(0, char.ToUpper(s[0]));
+        return s;
     }
 }

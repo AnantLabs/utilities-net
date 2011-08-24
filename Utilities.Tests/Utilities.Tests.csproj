@@ -94,14 +94,14 @@
     <Compile Include="CollectionExtensionsTest.IsValidIndex.g.cs">
       <DependentUpon>CollectionExtensionsTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="CommonUtilsTest.CloneT.g.cs">
-      <DependentUpon>CommonUtilsTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="CommonUtilsTest.cs" />
     <Compile Include="CommonUtilsTest.IsOneOf.g.cs">
       <DependentUpon>CommonUtilsTest.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonUtilsTest.NullSafe.g.cs">
+      <DependentUpon>CommonUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonUtilsTest.Safe.g.cs">
       <DependentUpon>CommonUtilsTest.cs</DependentUpon>
     </Compile>
     <Compile Include="DateTimeUtilsTest.CalculateAge01.g.cs">
@@ -233,6 +233,9 @@
       <DependentUpon>StringUtilsTest.cs</DependentUpon>
     </Compile>
     <Compile Include="StringUtilsTest.Replace.g.cs">
+      <DependentUpon>StringUtilsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringUtilsTest.ToSentenceCase.g.cs">
       <DependentUpon>StringUtilsTest.cs</DependentUpon>
     </Compile>
     <Compile Include="StringUtilsTest.TrimLines.g.cs">

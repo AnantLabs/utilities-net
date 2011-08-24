@@ -16,16 +16,8 @@ public partial class StringUtilsTest
 {
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
-public void ContainsCi989()
-{
-    bool b;
-    b = this.ContainsCi("", "");
-    Assert.AreEqual<bool>(true, b);
-}
-[TestMethod]
-[PexGeneratedBy(typeof(global::StringUtilsTest))]
 [ExpectedException(typeof(ArgumentNullException))]
-public void ContainsCiThrowsArgumentNullException134()
+public void ContainsCiThrowsArgumentNullException761()
 {
     bool b;
     b = this.ContainsCi((string)null, (string)null);
@@ -33,9 +25,17 @@ public void ContainsCiThrowsArgumentNullException134()
 [TestMethod]
 [PexGeneratedBy(typeof(global::StringUtilsTest))]
 [ExpectedException(typeof(ArgumentNullException))]
-public void ContainsCiThrowsArgumentNullException541()
+public void ContainsCiThrowsArgumentNullException499()
 {
     bool b;
     b = this.ContainsCi("", (string)null);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(global::StringUtilsTest))]
+public void ContainsCi989()
+{
+    bool b;
+    b = this.ContainsCi("", "");
+    Assert.AreEqual<bool>(true, b);
 }
 }
